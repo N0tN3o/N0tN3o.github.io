@@ -117,3 +117,10 @@ span{
 .aboutText{
     padding: 0 10em 0 10rem;
 }
+
+@media(max-width: 731px){
+    :root{
+        scroll-padding-top: 102px;
+    }
+    
+}
