@@ -86,9 +86,6 @@ a:hover{
     cursor: pointer;
 }
 
-/* td,tr,table{
-    outline: green solid 1px;
-} */
 #name{
     text-align: center;
     font-size: xx-large;
@@ -115,4 +112,8 @@ span{
     text-decoration: underline;
     color: blanchedalmond;
     font-weight: bold;
+}
+
+.aboutText{
+    padding: 0 10em 0 10rem;
 }
