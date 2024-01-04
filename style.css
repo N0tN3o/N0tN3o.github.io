@@ -1,0 +1,118 @@
+:root{
+    scroll-padding-top: 67.2px;
+}
+html{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color:#454545;
+    color: blanchedalmond;
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+header{
+    display: grid;
+    width: 100%;
+    justify-content: space-around;
+    grid-row: auto;
+}
+
+div{
+    background-color: #333333;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+img{
+    object-fit: contain;
+    width: 100%;
+}
+
+.nav{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    width: 100%;
+    position: sticky;
+    top: -1px;
+    background-color: #232323;
+}
+.navbar{
+    list-style-type: none;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+}
+.navigation{
+    display: inline-block;
+    list-style: none;
+}
+li>a{
+    text-decoration: none;
+    color: #8899aa;
+    display: block;
+    padding: 8px;
+}
+li>a:visited{
+    text-decoration: none;
+    color: #8899aa;
+    display: block;
+    padding: 8px;
+}
+li>a:hover{
+    color: #8899aa;
+    display: block;
+    padding: 8px;
+    background-color: #333333;
+}
+
+a{
+    color: #8ccbd2;
+    font-weight: bold;
+}
+a:visited{
+    color: #8cc1d2;
+    font-weight: bold
+}
+a:hover{
+    cursor: pointer;
+}
+
+/* td,tr,table{
+    outline: green solid 1px;
+} */
+#name{
+    text-align: center;
+    font-size: xx-large;
+    color: antiquewhite;
+}
+.info{
+    color: blanchedalmond;
+    font-size: large;
+    font-weight: bold;
+}
+#contactinfo{
+    text-align: center;
+}
+.mail{
+    font-weight: bold;
+}
+.phonenum{
+    color: blanchedalmond;
+    font-weight: bold;
+}
+
+span{
+    font-size: large;
+    text-decoration: underline;
+    color: blanchedalmond;
+    font-weight: bold;
+}
