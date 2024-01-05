@@ -6,7 +6,7 @@ html{
     background-color:#454545;
     color: blanchedalmond;
     scroll-behavior: smooth;
-    padding: 0 5em 0 5em;
+    min-width: 320px;
 }
 body{
     margin: 0px;
@@ -14,6 +14,9 @@ body{
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+}
+main{
+    padding: 0 5em 0 5em;
 }
 
 header{
@@ -122,11 +125,25 @@ span{
     :root{
         scroll-padding-top: 102px;
     }
+    main{
+        padding: 0 2em 0 2em;
+    }
     
+}
+@media(max-width: 610px){
+    :root{
+        scroll-padding-top: 102px;
+    }
+    main{
+        padding: 0;
+    }
 }
 @media(max-width: 545px){
     :root{
         scroll-padding-top: 137px;
+    }
+    main{
+        padding: 0;
     }
     
 }
@@ -134,7 +151,7 @@ span{
     :root{
         scroll-padding-top: 102px;
     }
-    html{
+    main{
         padding: 0;
     }
 }
