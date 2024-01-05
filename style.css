@@ -16,6 +16,9 @@ body{
 main{
     padding: 0 2em 0 2em;
 }
+.summary{
+    text-align: center;
+}
 
 header{
     min-width: 250px;
