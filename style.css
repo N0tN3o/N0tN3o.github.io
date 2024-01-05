@@ -3,7 +3,7 @@ html{
     background-color:#454545;
     color: blanchedalmond;
     scroll-behavior: smooth;
-    min-width: 320px;
+    min-width: 380px;
     scroll-padding-top: 67px;
 }
 body{
@@ -14,11 +14,11 @@ body{
     align-items: center;
 }
 main{
-    padding: 0 5em 0 5em;
+    padding: 0 2em 0 2em;
 }
 
 header{
-    min-width: 247px;
+    min-width: 250px;
     background-color: #232323;
     display: grid;
     width: 100%;
@@ -40,7 +40,7 @@ img{
 }
 
 .nav{
-    min-width: 247px;
+    min-width: 250px;
     margin: 0px;
     padding: 0px;
     text-align: center;
@@ -129,34 +129,34 @@ footer{
     padding: 0 1em 0 1em;
 }
 
-
-@media(max-width: 891px){
-    main{
-        padding: 0 2em 0 2em;
-    }
-    
-}
 @media(max-width: 731px){
     html{
-        scroll-padding-top: 103px;
+        scroll-padding-top: 102px;
     }
     main{
         padding: 0;
     }
 }
-@media(max-width: 545px){
+@media (max-width: 545px){
+    .info, .mail, .phonenum{
+        font-size: 11pt;
+        font-weight: normal;
+    }
     footer{
         flex-direction: column;
+    }
+    .info{
+        padding-top: 5em;
     }
     .contact{
         padding: 0;
     }
     .contact>p{
-        margin: 5px 0 5px 0;
+        margin:0;
     }
     
 }
-@media (min-width: 384px){
+@media (max-width: 384px){
     html{
         scroll-padding-top: 138px;
     }
