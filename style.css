@@ -28,7 +28,7 @@ header{
     grid-row: auto;
 }
 
-div{
+.circle{
     background-color: #333333;
     width: 100px;
     height: 100px;
@@ -120,19 +120,27 @@ span{
     font-weight: bold;
 }
 
+footer{
+    width: 100%;
+    background-image: linear-gradient(#454545, #232323);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact{
+    padding: 0 1em 0 1em;
+}
+
 
 @media(max-width: 891px){
-    :root{
-        scroll-padding-top: 102px;
-    }
     main{
         padding: 0 2em 0 2em;
     }
     
 }
-@media(max-width: 610px){
+@media(max-width: 731px){
     :root{
-        scroll-padding-top: 102px;
+        scroll-padding-top: 103px;
     }
     main{
         padding: 0;
@@ -142,16 +150,19 @@ span{
     :root{
         scroll-padding-top: 137px;
     }
-    main{
+    footer{
+        flex-direction: column;
+    }
+    .contact{
         padding: 0;
+    }
+    .contact>p{
+        margin: 5px 0 5px 0;
     }
     
 }
 @media(max-width: 436px){
     :root{
         scroll-padding-top: 102px;
-    }
-    main{
-        padding: 0;
     }
 }
