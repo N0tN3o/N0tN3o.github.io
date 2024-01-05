@@ -1,15 +1,15 @@
 :root{
-    scroll-padding-top: 67.2px;
+    scroll-padding-top: 67px;
 }
 html{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color:#454545;
     color: blanchedalmond;
     scroll-behavior: smooth;
+    padding: 0 5em 0 5em;
 }
 body{
     margin: 0px;
-    padding: 0px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -17,6 +17,7 @@ body{
 }
 
 header{
+    min-width: 247px;
     background-color: #232323;
     display: grid;
     width: 100%;
@@ -38,6 +39,7 @@ img{
 }
 
 .nav{
+    min-width: 247px;
     margin: 0px;
     padding: 0px;
     text-align: center;
@@ -115,13 +117,24 @@ span{
     font-weight: bold;
 }
 
-.aboutText{
-    padding: 0 10em 0 10rem;
-}
 
-@media(max-width: 731px){
+@media(max-width: 891px){
     :root{
         scroll-padding-top: 102px;
     }
     
+}
+@media(max-width: 545px){
+    :root{
+        scroll-padding-top: 137px;
+    }
+    
+}
+@media(max-width: 436px){
+    :root{
+        scroll-padding-top: 102px;
+    }
+    html{
+        padding: 0;
+    }
 }
