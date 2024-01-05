@@ -1,12 +1,10 @@
-:root{
-    scroll-padding-top: 67px;
-}
 html{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color:#454545;
     color: blanchedalmond;
     scroll-behavior: smooth;
     min-width: 320px;
+    scroll-padding-top: 67px;
 }
 body{
     margin: 0px;
@@ -139,7 +137,7 @@ footer{
     
 }
 @media(max-width: 731px){
-    :root{
+    html{
         scroll-padding-top: 103px;
     }
     main{
@@ -147,9 +145,6 @@ footer{
     }
 }
 @media(max-width: 545px){
-    :root{
-        scroll-padding-top: 137px;
-    }
     footer{
         flex-direction: column;
     }
@@ -161,8 +156,8 @@ footer{
     }
     
 }
-@media(max-width: 436px){
-    :root{
-        scroll-padding-top: 102px;
+@media (min-width: 384px){
+    html{
+        scroll-padding-top: 138px;
     }
 }
