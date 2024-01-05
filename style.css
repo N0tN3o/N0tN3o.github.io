@@ -1,7 +1,7 @@
 html{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color:#454545;
-    color: blanchedalmond;
+    color: whitesmoke;
     scroll-behavior: smooth;
     min-width: 380px;
     scroll-padding-top: 67px;
@@ -93,10 +93,9 @@ a:hover{
 #name{
     text-align: center;
     font-size: xx-large;
-    color: antiquewhite;
+    color: whitesmoke;
 }
 .info{
-    color: blanchedalmond;
     font-size: large;
     font-weight: bold;
 }
@@ -107,14 +106,12 @@ a:hover{
     font-weight: bold;
 }
 .phonenum{
-    color: blanchedalmond;
     font-weight: bold;
 }
 
 span{
     font-size: large;
     text-decoration: underline;
-    color: blanchedalmond;
     font-weight: bold;
 }
 
