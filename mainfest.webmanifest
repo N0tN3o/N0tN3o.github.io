@@ -1,0 +1,10 @@
+{
+    "short_name": "Weather",
+    "name": "Weather: Do I need an umbrella?",
+    "display": "standalone",
+    "id": "/?n0tn3o.github.io",
+    "start_url": "/?n0tn3o.github.io",
+    "background_color": "#454545",
+    "scope": "/",
+    "theme_color": "#454545"
+}
