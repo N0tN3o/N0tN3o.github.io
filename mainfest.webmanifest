@@ -6,5 +6,12 @@
     "start_url": "/?n0tn3o.github.io",
     "background_color": "#454545",
     "scope": "/",
-    "theme_color": "#454545"
+    "theme_color": "#454545",
+    "icons": [
+        {
+            "src": "images\\Clipped_image_20240104_192304.png",
+            "type": "image",
+            "sizes": "512x512"
+        }
+    ]
 }
