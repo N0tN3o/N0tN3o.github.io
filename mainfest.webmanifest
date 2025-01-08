@@ -1,13 +1,13 @@
 {
-    "short_name": "Portfolio",
-    "name": "CV Style Portfolio",
+    "name": "My Portfolio Webapp",
+    "short_name": "Portfolip",
+    "start_url": "/",
     "display": "standalone",
-    "id": "protfoli?version=1.1",
-    "start_url": "/?n0tn3o.github.io",
+    "description": "Showcasing general information, skills, and projects of NMTHVince.",
     "background_color": "#454545",
     "scope": "/",
-    "version": "1.1",
     "theme_color": "#454545",
+    "version": "1.2.0", 
     "icons": [
         {
             "src": "images\\webicon2.ico",
