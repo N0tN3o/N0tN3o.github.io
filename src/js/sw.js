@@ -6,12 +6,12 @@ const DYNAMIC_CACHE = 'dynamic-v1.2';
 // Static assets to cache immediately
 const staticAssets = [
   '/',
-  '/index.html',
+  '/index2.html',
   '/src/css/styles-base.css',
   '/src/css/styles-desktop.css',
   '/src/css/styles-mobile.css',
   '/src/js/script.js',
-  '/manifest.json',
+  '/manifest.webmanifest',
   '/images/icon-192x192.png',
   '/images/icon-512x512.png'
 ];
