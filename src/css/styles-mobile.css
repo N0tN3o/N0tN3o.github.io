@@ -1,0 +1,339 @@
+/* ==============================================
+   MOBILE-SPECIFIC STYLES (768px and below)
+   ============================================== */
+
+/* ==============================================
+   MOBILE NAVIGATION
+   ============================================== */
+
+.mobile-menu-toggle {
+    display: flex;
+    z-index: 1001;
+}
+
+.nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(26, 32, 44, 0.98);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links a {
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.nav-links a:last-child {
+    border-bottom: none;
+}
+
+/* ==============================================
+   MOBILE HERO SECTION
+   ============================================== */
+
+.hero {
+    padding: 2rem 0;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    margin-bottom: 1rem;
+}
+
+.hero .subtitle {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    margin-bottom: 1.5rem;
+}
+
+.hero .description {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.cta-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+}
+
+/* ==============================================
+   MOBILE CONTENT SECTIONS
+   ============================================== */
+
+.content-section {
+    padding: 2rem 1rem;
+    margin: 1rem 0;
+    border-radius: 15px;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.section {
+    padding: 3rem 0;
+    min-height: auto;
+}
+
+/* ==============================================
+   MOBILE SKILLS GRID
+   ============================================== */
+
+.skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.skill-category {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.skill-category h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.skill-tags {
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.skill-tag {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    touch-action: manipulation;
+}
+
+/* ==============================================
+   MOBILE TIMELINE
+   ============================================== */
+
+.experience-timeline {
+    padding-left: 1rem;
+}
+
+.experience-timeline::before {
+    left: 0.5rem;
+}
+
+.timeline-item {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+    left: -1.8rem;
+    top: 1.5rem;
+    width: 10px;
+    height: 10px;
+}
+
+.timeline-title {
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+.timeline-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.project-highlight {
+    padding: 0.8rem;
+    margin: 0.8rem 0;
+    font-size: 0.9rem;
+}
+
+/* ==============================================
+   MOBILE CONTACT SECTION
+   ============================================== */
+
+.contact-info {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    padding: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.contact-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ==============================================
+   MOBILE TYPOGRAPHY
+   ============================================== */
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.3;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* ==============================================
+   MOBILE INTERACTIONS
+   ============================================== */
+
+/* Remove hover effects on mobile */
+.skill-category:hover,
+.timeline-item:hover,
+.contact-item:hover {
+    transform: none;
+    box-shadow: 0 5px 20px var(--shadow);
+}
+
+/* Touch-friendly buttons */
+.cta-button,
+.skill-tag,
+.nav-links a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==============================================
+   MOBILE PERFORMANCE
+   ============================================== */
+
+/* Reduce animations on mobile for better performance */
+.bg-animation {
+    animation-duration: 20s;
+}
+
+.particle {
+    animation-duration: 8s;
+}
+
+/* Disable complex animations on small screens */
+@media (max-width: 480px) {
+    .particle {
+        display: none;
+    }
+    
+    .bg-animation {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        animation: none;
+    }
+}
+
+/* ==============================================
+   MOBILE SPACING
+   ============================================== */
+
+.container {
+    padding: 0 1rem;
+}
+
+.nav-container {
+    padding: 0 1rem;
+}
+
+/* ==============================================
+   MOBILE SCROLL INDICATOR
+   ============================================== */
+
+.scroll-indicator {
+    display: none; /* Hide on mobile to save space */
+}
+
+/* ==============================================
+   MOBILE SAFE AREAS (for devices with notches)
+   ============================================== */
+
+@supports (padding: max(0px)) {
+    .nav-container {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+    
+    .container {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+}
+
+/* ==============================================
+   MOBILE ORIENTATION ADJUSTMENTS
+   ============================================== */
+
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 4rem 0;
+    }
+    
+    .section {
+        padding: 2rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero .subtitle {
+        font-size: 1.3rem;
+    }
+}
+
+/* ==============================================
+   VERY SMALL SCREENS (480px and below)
+   ============================================== */
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .content-section {
+        padding: 1.5rem 1rem;
+    }
+    
+    .skill-category {
+        padding: 1rem;
+    }
+    
+    .timeline-item {
+        padding: 1rem;
+    }
+    
+    .contact-item {
+        padding: 1rem;
+    }
+}

@@ -1,18 +1,17 @@
 {
     "name": "My Portfolio Webapp",
-    "short_name": "Portfolip",
+    "short_name": "Portfolio",
     "start_url": "/",
     "display": "standalone",
     "description": "Showcasing general information, skills, and projects of NMTHVince.",
     "background_color": "#454545",
     "scope": "/",
     "theme_color": "#454545",
-    "version": "1.2.0", 
     "icons": [
         {
             "src": "images\\webicon2.ico",
             "type": "image/png",
-            "sizes": "512x512"
+            "sizes": "129x110"
         }
     ]
 }
