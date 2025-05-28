@@ -186,6 +186,19 @@ nav.scrolled {
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+.about-description {
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.about-grid {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
 .about-item {
     line-height: 1.8;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -196,10 +209,9 @@ nav.scrolled {
 }
 .about-item h3 {
     text-align: center;
-    padding-right: 20px;
 }
 .about-item p {
-    text-wrap: nowrap;
+    white-space: nowrap;
 }
 
 /* ==============================================
@@ -262,6 +274,10 @@ nav.scrolled {
     box-shadow: 0 8px 25px rgba(240, 147, 251, 0.4);
 }
 
+.scroll-arrow{
+    font-size: 2rem;
+}
+
 /* ==============================================
    SKILLS SECTION
    ============================================== */
@@ -295,7 +311,7 @@ nav.scrolled {
 
 .skill-tag {
     width: fit-content;
-    text-wrap: nowrap;
+    white-space: nowrap;
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     color: var(--text-light);
     padding: 0.3rem 0.8rem;
@@ -362,6 +378,10 @@ nav.scrolled {
     line-height: 1.6;
 }
 
+.timeline-item-highlight {
+    margin-top: 1rem;
+}
+
 .project-highlight {
     background: linear-gradient(135deg, rgba(240, 147, 251, 0.1), rgba(102, 126, 234, 0.1));
     padding: 1rem;
@@ -386,7 +406,7 @@ nav.scrolled {
 .contact-item {
     text-align: center;
     min-width: 20rem;
-    text-wrap: nowrap;
+    white-space: nowrap;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--text-light);
     padding: 2rem;
