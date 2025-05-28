@@ -186,6 +186,21 @@ nav.scrolled {
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+.about-item {
+    line-height: 1.8;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    padding: 2rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+.about-item h3 {
+    text-align: center;
+    padding-right: 20px;
+}
+.about-item p {
+    text-wrap: nowrap;
+}
 
 /* ==============================================
    HERO SECTION
@@ -279,6 +294,8 @@ nav.scrolled {
 }
 
 .skill-tag {
+    width: fit-content;
+    text-wrap: nowrap;
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     color: var(--text-light);
     padding: 0.3rem 0.8rem;
@@ -358,13 +375,18 @@ nav.scrolled {
    ============================================== */
 
 .contact-info {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     text-align: center;
+    justify-content: space-evenly;
 }
 
 .contact-item {
+    text-align: center;
+    min-width: 20rem;
+    text-wrap: nowrap;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--text-light);
     padding: 2rem;
@@ -372,6 +394,10 @@ nav.scrolled {
     transition: all 0.3s ease;
 }
 
+.contact-info a {
+    color: var(--text-light);
+    text-decoration: none;
+}
 /* ==============================================
    PROGRESS BAR
    ============================================== */

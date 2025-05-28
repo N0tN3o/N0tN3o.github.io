@@ -7,10 +7,10 @@ const DYNAMIC_CACHE = 'dynamic-v1.2';
 const staticAssets = [
   '/',
   '/index.html',
-  '/styles-base.css',
-  '/styles-desktop.css',
-  '/styles-mobile.css',
-  '/script.js',
+  '/src/css/styles-base.css',
+  '/src/css/styles-desktop.css',
+  '/src/css/styles-mobile.css',
+  '/src/js/script.js',
   '/manifest.json',
   '/images/icon-192x192.png',
   '/images/icon-512x512.png'
