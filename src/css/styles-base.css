@@ -200,6 +200,9 @@ nav.scrolled {
     font-size: clamp(3rem, 8vw, 6rem);
     margin-bottom: 1rem;
     animation: slideInUp 1s ease 0.2s both;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    font-weight: 700;
 }
 
 .hero .subtitle {
