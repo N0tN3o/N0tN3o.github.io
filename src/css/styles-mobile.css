@@ -5,10 +5,13 @@
 /* ==============================================
    MOBILE NAVIGATION
    ============================================== */
-
+body {
+    margin-top: 15px;;
+}
 .mobile-menu-toggle {
     display: flex;
     z-index: 1001;
+
 }
 
 .nav-links {
@@ -44,7 +47,7 @@
    ============================================== */
 
 .hero {
-    min-height: 100vh;
+    height: 100dvh;
     justify-content: center;
 }
 
