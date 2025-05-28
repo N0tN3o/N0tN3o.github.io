@@ -1,6 +1,6 @@
 {
     "name": "My Portfolio Webapp",
-    "short_name": "Portfolip",
+    "short_name": "Portfolio",
     "start_url": "/",
     "display": "standalone",
     "description": "Showcasing general information, skills, and projects of NMTHVince.",
@@ -12,7 +12,7 @@
         {
             "src": "images\\webicon2.ico",
             "type": "image/png",
-            "sizes": "512x512"
+            "sizes": "129x110"
         }
     ]
 }
