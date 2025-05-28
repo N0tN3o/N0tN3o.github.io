@@ -3,16 +3,30 @@
     "short_name": "Portfolio",
     "start_url": "/",
     "display": "standalone",
-    "description": "Showcasing general information, skills, and projects of NMTHVince.",
-    "background_color": "#454545",
+    "description": "Showcasing general information, skills, and projects.",
+    "background_color": "#667eea",
+    "theme_color": "#667eea",
     "scope": "/",
-    "theme_color": "#454545",
-    "version": "1.5.0", 
     "icons": [
         {
-            "src": "images\\webicon2.ico",
+            "src": "images/icon-192x192.png",
             "type": "image/png",
-            "sizes": "129x110"
+            "sizes": "192x192",
+            "purpose": "any"
+        },
+        {
+            "src": "images/icon-512x512.png",
+            "type": "image/png", 
+            "sizes": "512x512",
+            "purpose": "any"
+        },
+        {
+            "src": "images/icon-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192",
+            "purpose": "maskable"
         }
-    ]
+    ],
+    "orientation": "portrait-primary",
+    "lang": "en-US"
 }
