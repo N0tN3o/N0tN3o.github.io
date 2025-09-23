@@ -53,7 +53,7 @@
    SCROLL INDICATOR (DESKTOP ONLY)
    ============================================== */
 
-.scroll-indicator {
+/* .scroll-indicator {
     position: absolute;
     bottom: 2rem;
     left: 50%;
@@ -73,7 +73,7 @@
     60% { 
         transform: translateX(-50%) translateY(-5px); 
     }
-}
+} */
 
 /* ==============================================
    ADVANCED PARTICLE EFFECTS
@@ -184,10 +184,21 @@
     border-radius: 15px;
     opacity: 0;
     transition: opacity 0.3s ease;
+    /* Important: don't block clicks on content (e.g., <summary>) */
+    pointer-events: none;
 }
 
 .timeline-item:hover::after {
     opacity: 1;
+}
+
+/* Improve native details/summary affordance in timeline */
+.timeline-description details {
+    margin-top: 0.5rem;
+}
+
+.timeline-description summary {
+    cursor: pointer;
 }
 
 /* ==============================================
@@ -262,5 +273,58 @@
     
     .content-section {
         padding: 4rem;
+    }
+}
+
+/* ==============================================
+   LARGER SCREEN OPTIMIZATIONS (2200px+)
+   ============================================== */
+@media (min-width: 2200px) {
+    .container {
+        min-width: 2000px;
+        max-width: 6000px;
+        width: 70%;
+    }
+    
+    .hero h1 {
+        font-size: 12rem;
+    }
+    
+    .hero .subtitle {
+        font-size: 6rem;
+    }
+    
+    .hero .description {
+        font-size: 3.2rem;
+    }
+    
+    .section-title {
+        font-size: 8rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(4, 2fr);
+        gap: 7rem;
+    }
+    
+    .content-section {
+        padding: 10rem 8rem;
+    }
+    
+    .skill-category {
+        padding: 5rem;
+    }
+    
+    .timeline-item {
+        padding: 5rem;
+    }
+    
+    .contact-item {
+        padding: 5rem;
+    }
+
+    .cta-button {
+        font-size: 2.5rem;
+        padding: 1.5rem 3rem;
     }
 }
