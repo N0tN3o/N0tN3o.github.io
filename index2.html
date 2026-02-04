@@ -3,36 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of an AI Developer & Data Science student at Breda University. Showcasing skills in machine learning, neural networks, Python programming, and innovative AI projects.">
+    <meta name="description" content="Portfolio of an AI Developer & Data Science student at Breda University. Specializing in Robotics, RAG systems, Financial AI, and full-stack Engineering.">
     <title>Vince N&#233;meth - AI Developer & Data Scientist</title>
-    <!-- Base styles for all devices -->
     <link rel="stylesheet" href="/src/css/styles-base.css">
     
-    <!-- Desktop-specific styles -->
-    <link rel="stylesheet" href="/src/css/styles-desktop.css" media="(min-width: 769px)">
+    <link rel="stylesheet" href="/src/css/styles-desktop.css" media="(min-width: 1024px)">
     
-    <!-- Mobile-specific styles -->
-    <link rel="stylesheet" href="/src/css/styles-mobile.css" media="(max-width: 768px)">
+    <link rel="stylesheet" href="/src/css/styles-mobile.css" media="(max-width: 1023px)">
 </head>
 <body>
     <div class="bg-animation"></div>
-    <div class="floating-particles" id="particles"></div>
     <div class="progress-bar" id="progressBar"></div>
 
     <nav id="navbar">
         <div class="nav-container">
             <a href="#home" class="logo">Vince N&#233;meth</a>
-            <div class="mobile-menu-toggle" id="mobileToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            
+            <button class="mobile-menu-toggle" id="hamburgerBtn" aria-label="Toggle navigation">
+                <span class="bar top"></span>
+                <span class="bar mid"></span>
+                <span class="bar bot"></span>
+            </button>
+
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#personal-projects">Personal Projects</a></li>
+                <li><a href="#personal-projects">Projects</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -44,14 +42,10 @@
             <h1>Vince N&#233;meth</h1>
             <p class="subtitle">AI Developer & Data Scientist</p>
             <p class="description">
-                Enthusiastic BSc Data Science & AI student with hands-on experience in AI development, 
-                data engineering, and software prototyping. Building interpretable, user-centered machine learning applications.
+                Results-driven BSc Data Science & AI student capable of building end-to-end systems. 
+                From <strong>Precision Robotics</strong> and <strong>Generative AI</strong> to <strong>Predictive Financial Modeling</strong>, I engineer intelligent solutions that work in the real world.
             </p>
             <a href="#about" class="cta-button">Explore My Work</a>
-            <!-- <div class="scroll-indicator">
-                <div class="scroll-arrow">⬇</div>
-                <div>Scroll to explore</div>
-            </div> -->
         </div>
     </section>
 
@@ -60,10 +54,9 @@
             <div class="content-section">
                 <h2 class="section-title">About Me</h2>
                     <p class="about-description">
-                        I'm a passionate Data Science & AI student at Breda University of Applied Sciences, 
-                        comfortable switching between practical projects and theoretical foundations. 
-                        With a strong interest in building interpretable, user-centered machine learning applications, 
-                        I bring curiosity, persistence, and a builder's mindset to every challenge.
+                        I am a Data Science & AI developer at Breda University of Applied Sciences with a focus on production-grade engineering. 
+                        My expertise spans the full stack: I build autonomous **robotic pipelines**, secure **RAG systems** for enterprise, and advanced **predictive models** for healthcare and finance.
+                        I bridge the gap between complex algorithmic research and reliable, user-friendly software.
                     </p>
                 
                 <div class="about-grid">
@@ -77,7 +70,7 @@
                     </div>
                     <div class="about-item">
                         <h3>🎯 Interests</h3><br>
-                        <p>• DIY Tech Projects<br>• Game Development<br>• Travel (16+ countries)</p>
+                        <p>• Homelabs & Self-Hosting<br>• Game Development<br>• Travel (16+ countries)</p>
                     </div>
                 </div>
             </div>
@@ -93,76 +86,59 @@
                         <h3>🐍 Programming Languages</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Python</span>
+                            <span class="skill-tag">PySide6 (Qt)</span>
                             <span class="skill-tag">JavaScript</span>
                             <span class="skill-tag">HTML/CSS</span>
-                            <span class="skill-tag">Bash</span>
-                            <span class="skill-tag">Arduino</span>
+                            <span class="skill-tag">SQL (PostgreSQL)</span>
                         </div>
                     </div>
                     
                     <div class="skill-category">
-                        <h3>🤖 AI & Machine Learning</h3>
+                        <h3>🤖 AI & Robotics</h3>
                         <div class="skill-tags">
-                            <span class="skill-tag">Neural Networks</span>
-                            <span class="skill-tag">CNNs</span>
-                            <span class="skill-tag">LSTMs</span>
-                            <span class="skill-tag">K-Means Clustering</span>
-                            <span class="skill-tag">Deep Learning</span>
-                            <span class="skill-tag">Model Validation</span>
+                            <span class="skill-tag">XGBoost / LSTM</span>
+                            <span class="skill-tag">ResUNet / CNNs</span>
+                            <span class="skill-tag">PID Control</span>
+                            <span class="skill-tag">RAG Systems</span>
+                            <span class="skill-tag">Opentrons</span>
+                            <span class="skill-tag">Explainable AI</span>
                         </div>
                     </div>
                     
                     <div class="skill-category">
-                        <h3>🌐 Web Development</h3>
+                        <h3>📊 Data Science</h3>
                         <div class="skill-tags">
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">Flask</span>
-                            <span class="skill-tag">Streamlit</span>
-                            <span class="skill-tag">Gradio</span>
-                            <span class="skill-tag">Shiny</span>
+                            <span class="skill-tag">Time Series (SARIMAX)</span>
+                            <span class="skill-tag">HDBSCAN / K-Means</span>
+                            <span class="skill-tag">Feature Engineering</span>
+                            <span class="skill-tag">A/B Testing</span>
+                            <span class="skill-tag">PCA</span>
                         </div>
                     </div>
                     
                     <div class="skill-category">
-                        <h3>🛠️ Tools & Platforms</h3>
+                        <h3>🚀 DevOps & Cloud</h3>
                         <div class="skill-tags">
+                            <span class="skill-tag">Docker Compose</span>
+                            <span class="skill-tag">Traefik</span>
+                            <span class="skill-tag">Linux Administration</span>
                             <span class="skill-tag">Git/GitHub</span>
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">PostgreSQL</span>
-                            <span class="skill-tag">Poetry</span>
-                            <span class="skill-tag">Conda</span>
                         </div>
                     </div>
                     
                     <div class="skill-category">
-                        <h3>⚙️ Hardware & Systems</h3>
+                        <h3>🌐 Web & App Dev</h3>
                         <div class="skill-tags">
-                            <span class="skill-tag">Raspberry Pi</span>
-                            <span class="skill-tag">TrueNAS</span>
-                            <span class="skill-tag">Arduino</span>
-                            <span class="skill-tag">Custom ROMs</span>
-                            <span class="skill-tag">Home Automation</span>
-                            <span class="skill-tag">Windows</span>
-                            <span class="skill-tag">Linux</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3>💡 Soft Skills</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Fast Learner</span>
-                            <span class="skill-tag">Problem Solver</span>
-                            <span class="skill-tag">Team Leadership</span>
-                            <span class="skill-tag">Adaptable</span>
-                            <span class="skill-tag">Creative Thinker</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">FFmpeg</span>
+                            <span class="skill-tag">Streamlit</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    
 
     <section id="experience" class="section">
         <div class="container">
@@ -171,21 +147,48 @@
                 <div class="experience-timeline">
                     <div class="timeline-item">
                         <div class="timeline-date">2024 - Present</div>
-                        <h3 class="timeline-title">AI, ML Developer, Researcher & Student</h3>
+                        <h3 class="timeline-title">AI Developer & Researcher (Student)</h3>
                         <div class="timeline-description">
                             <strong>Breda University of Applied Sciences (Student Projects)</strong>
                             <br><br>
-                            Developed and fine-tuned AI models in various team-based projects, responsible for training models, managing datasets, and presenting results.
+                            Lead developer on diverse initiatives, demonstrating full-stack competency from algorithm design to physical hardware deployment.
                             
                             <div class="project-highlight">
-                                <strong>🔮 Digital Advisor:</strong> Built predictive investment system using K-Means clustering and LSTM forecasting
+                                <strong>🌱 Hades Automated Phenotyping (NPEC):</strong> 
+                                Engineered an end-to-end robotics pipeline for the **Netherlands Plant Eco-phenotyping Centre**. 
+                                Solved a critical research bottleneck by replacing manual labor with a **ResUNet** segmentation model and **PID-controlled** robotic inoculation. 
+                                <br><em>Impact:</em> Achieved **40x throughput increase** (50 to 2,000 dishes/day) with **<0.1mm precision**.
                             </div>
-                            
+
                             <div class="project-highlight">
-                                <strong>🚗 Vehicle Damage Assessment:</strong> Created automated image classification system using CNN and hybrid models
+                                <strong>📈 Digital Advisor (Stock Investment):</strong> 
+                                Built a hybrid forecasting engine using **SARIMAX** (Time-Series) and **LSTM** (Deep Learning) to predict NASDAQ-100 trends. 
+                                Achieved **98.5% R² accuracy** on major stocks (META). 
+                                Developed a **PostgreSQL** backend and interactive dashboard for real-time trading simulation.
                             </div>
+
                             <div class="project-highlight">
-                                <strong>🩺 Diabetic Patient Identification:</strong> Created a machine learning pipeline to identify potential hospital admission duration for diabetic patients from health records using feature engineering, regression, classification, and model evaluation.
+                                <strong>📚 Tobroco Engineering RAG System:</strong> 
+                                Designed a privacy-focused Q&A system for engineering standards using **Llama 3**, **FastAPI**, and **ChromaDB**. 
+                                Implemented "Red Teaming" defenses (XML walls, anti-roleplay) to prevent hallucinations and ensure secure, cited responses.
+                            </div>
+
+                            <div class="project-highlight">
+                                <strong>🩺 Diabetic Patient Identification:</strong> 
+                                Engineered a predictive pipeline for hospital readmission and stay duration using **XGBoost** (MAE ~1.6 days) and **Random Forest**. 
+                                Performed advanced patient clustering with **HDBSCAN** (Silhouette Score 0.71) and **PCA**, solving critical data quality issues through rigorous cleaning.
+                            </div>
+
+                            <div class="project-highlight">
+                                <strong>🚗 Vehicle Damage Assessment (AI Research):</strong> 
+                                Developed a Deep CNN pipeline to classify vehicle damage (Dents vs. Cracks) with **87% accuracy**. 
+                                Integrated **Explainable AI (Grad-CAM++)** to generate saliency maps, visualizing *why* damage was detected to increase user trust.
+                            </div>
+
+                            <div class="project-highlight">
+                                <strong>👁️ Latent Space (Interactive Installation):</strong> 
+                                Co-engineered a gaze-controlled art system running on **Jetson Orin Nano**. 
+                                Built a pipeline connecting real-time eye tracking (**MediaPipe**) to Deep Learning classification and thermal printing hardware.
                             </div>
                         </div>
                     </div>
@@ -196,8 +199,8 @@
                         <div class="timeline-description">
                             <strong>Valeo</strong>
                             <br><br>
-                            Assisted with software development tasks, debugging, and system optimization.
-                            Gained hands-on experience in industrial software applications and collaborative project workflows.
+                            Contributed to industrial software optimization and debugging.
+                            Collaborated with cross-functional teams to streamline manufacturing workflows through software solutions.
                         </div>
                     </div>
 
@@ -208,25 +211,34 @@
                             <strong>Valeo</strong>
                             <br><br>
                             <details>
-                                <summary>Assisted with supplier audits, data logging, and process documentation.
-                                Gained valuable insight into procurement logistics and quality control workflows in a professional manufacturing environment.</summary>
-                                <!-- Details Placeholder -->
+                                <summary>Supported supplier audits and process data analysis. Gained critical insight into quality control logic used in industrial automation.</summary>
                                 <div class="details-content">
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br>In recusandae dignissimos ex cumque ipsa ullam placeat asperiores, optio nobis repellendus veniam molestias tenetur, <br>corrupti assumenda dolorum quisquam consectetur, eligendi mollitia.
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam neque facere officia recusandae iste, sit temporibus ipsum libero id qui, earum labore minus distinctio? Doloribus facere esse architecto laudantium saepe?</p>
+                                    <p>Assisted in the verification of supplier compliance, managed data logging for quality metrics, and helped optimize documentation workflows.</p>
                                 </div>
                             </details>
                         </div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">2018 - Present</div>
-                        <h3 class="timeline-title">Freelance Tech Projects</h3>
+                        <div class="timeline-date">2023 - Present</div>
+                        <h3 class="timeline-title">Freelance Software Engineer</h3>
                         <div class="timeline-description">
                             <strong>Independent Projects</strong>
                             <br><br>
-                            Hands-on independent work spanning game dev, Python tooling, embedded systems, and homelab.
-                            See the <a href="#personal-projects">Personal Projects</a> section for a curated list.
+                            Development of professional-grade tools and open-source software.
+                            
+                            <div class="project-highlight">
+                                <strong>⚡ Local Alerting & SEO Monitor:</strong> 
+                                Engineered a self-contained infrastructure monitoring tool using **Docker** and **Traefik**. 
+                                Implemented automated downtime detection, SEO validation, and JSONL reporting pipelines to ensure web service reliability.
+                            </div>
+
+                            <div class="project-highlight">
+                                <strong>🎬 CineSlice (Desktop Application):</strong>
+                                Engineered a precision video extraction tool using **Python 3.11** and **PySide6 (Qt)**. 
+                                Architected a multi-threaded **FFmpeg** pipeline with `QThread` to ensure UI responsiveness and lossless image retrieval. 
+                                Implemented "Smart Estimation" logic and robust crash reporting for a professional user experience.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -238,28 +250,22 @@
         <div class="container">
             <div class="content-section">
                 <h2 class="section-title">Personal Projects</h2>
-                <p class="project-description">Selected independent and personal projects.</p>
+                <p class="project-description">Selected independent engineering and development work.</p>
                 <ul class="project-list">
                     <div class="project-highlight">
-                        Built 2D strategy game using Godot 3 engine
+                        Developed a 2D strategy game using Godot Engine (C#/GDScript)
                     </div>
                     <div class="project-highlight">
-                        Developed mini pandas-like library using core Python
+                        Built a lightweight Data Science library (Pandas-clone) in pure Python
                     </div>
                     <div class="project-highlight">
-                        Managed Raspberry Pi systems for automation
+                        Architected a home automation ecosystem using Raspberry Pi & Home Assistant
                     </div>
                     <div class="project-highlight">
-                        Flashed custom ROMs on Android devices
+                        Advanced Android customization (Custom ROMs & Kernel tuning)
                     </div>
                     <div class="project-highlight">
-                        Created and administered TrueNAS home server
-                    </div>
-                    <div class="project-highlight">
-                        Arduino sensor projects (motion/flex sensors)
-                    </div>
-                    <div class="project-highlight">
-                        Taught informatics and organized tech logistics for youth camps
+                        Deployed and managed TrueNAS scale storage servers
                     </div>
                 </ul>
             </div>
@@ -277,14 +283,14 @@
                         <div class="timeline-description">
                             <strong>Breda University of Applied Sciences</strong>
                             <br><br>
-                            Comprehensive program covering AI concepts, Python programming, data visualization, mathematical foundations, deep learning, and explainable AI.
+                            Intensive curriculum covering Generative AI, Deep Learning, and Software Engineering.
                             
                             <div class="timeline-item-highlight">
-                                <strong>Core Modules:</strong> Statistics • Neural Networks • Data Processing • Software Engineering • Human-Centered Design • Time Series Analysis • Agile Project Management
+                                <strong>Core Modules:</strong> Neural Networks • NLP & RAG • Computer Vision • Software Architecture • Human-Centered Design • Agile Management
                             </div>
                             
                             <div class="timeline-item-highlight">
-                                <strong>Practical Experience:</strong> Multiple DataLab projects focusing on real-life AI applications
+                                <strong>Practical Focus:</strong> Delivering functional AI prototypes for real-world clients in the DataLab.
                             </div>
                         </div>
                     </div>
@@ -295,8 +301,7 @@
                         <div class="timeline-description">
                             <strong>Vetési Albert Gimnázium</strong>
                             <br><br>
-                            Advanced-level Mathematics and Computer Science courses with bilingual French instruction. <br>
-                            Participated in MTA Tanulmányi Verseny (Hungarian Academic Competition) in 2023.
+                            Specialized in Advanced Mathematics and Computer Science with bilingual instruction.
                         </div>
                     </div>
                 </div>
@@ -318,40 +323,36 @@
                     <a href="https://linkedin.com/in/vince-nemeth/" target="_blank" rel="noopener noreferrer">
                         <div class="contact-item">
                             <h3>💼 LinkedIn</h3>
-                            <p>linkedin.com</p>
+                            <p>Connect with me</p>
                         </div>
                     </a>
-                    <a href="https://github.com/N0tN3o/skills-and-projects" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/N0tN3o" target="_blank" rel="noopener noreferrer">
                         <div class="contact-item">
                             <h3>🐙 GitHub</h3>
-                            <p>github.com</p>
+                            <p>View Code</p>
                         </div>
                     </a>
                     <div class="contact-item">
                         <h3>📱 Available For</h3>
-                        <p>Internships • Projects • Collaboration</p>
+                        <p>Internships • AI Consulting • Development</p>
                     </div>
                 </div>
-                <div style="text-align: center; margin-top: 3rem;">
-                    <p style="font-size: 1.1rem; color: #666;">
-                        Always up for learning new tools and frameworks. Let's build something amazing together!
-                    </p>
+                
+                <div class="footer-message">
+                    <p>Ready to build the next generation of intelligent software.</p>
                 </div>
+
             </div>
         </div>
     </section>
+    
     <script src="/src/js/script.js"></script>
-    <!-- PWA Service Worker Registration -->
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/src/js/sw.js')
-                    .then((registration) => {
-                        console.log('SW registered: ', registration);
-                    })
-                    .catch((registrationError) => {
-                        console.log('SW registration failed: ', registrationError);
-                    });
+                    .then((registration) => console.log('SW registered: ', registration))
+                    .catch((err) => console.log('SW registration failed: ', err));
             });
         }
     </script>
