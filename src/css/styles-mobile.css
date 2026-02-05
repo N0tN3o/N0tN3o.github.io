@@ -180,6 +180,10 @@
         grid-template-columns: 1fr;
         gap: 1rem;
     }
+    
+    .blocks-grid.wide {
+        grid-template-columns: 1fr;
+    }
 
     .block-card {
         padding: 1rem;

@@ -16,10 +16,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==============================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', (e) => {
-            e.preventDefault();
-            const target = document.querySelector(anchor.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const href = anchor.getAttribute('href');
+            
+            // Skip if href is just "#" or empty
+            if (!href || href === '#') {
+                e.preventDefault();
+                return;
+            }
+            
+            try {
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            } catch (error) {
+                // Invalid selector, let browser handle it normally
+                console.warn('Invalid anchor href:', href);
             }
         });
     });

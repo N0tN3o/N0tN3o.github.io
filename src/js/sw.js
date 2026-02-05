@@ -295,23 +295,13 @@ self.addEventListener('sync', (event) => {
 });
 
 // ==============================================
-// PUSH NOTIFICATIONS (Future Enhancement)
+// PUSH NOTIFICATIONS
+// Removed - Not implemented for this portfolio.
+// To add push notifications in the future, you would need:
+// 1. A server to send push messages
+// 2. Request permission via user gesture (button click)
+// 3. Subscribe to push service and send subscription to server
 // ==============================================
-
-self.addEventListener('push', (event) => {
-    console.log('[SW] Push message received');
-    
-    const options = {
-        body: event.data ? event.data.text() : 'New update available',
-        icon: './images/icon-192x192.png',
-        badge: './images/icon-72x72.png',
-        vibrate: [100, 50, 100]
-    };
-    
-    event.waitUntil(
-        self.registration.showNotification('Portfolio Update', options)
-    );
-});
 
 // ==============================================
 // MESSAGE HANDLING
