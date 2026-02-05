@@ -1,38 +1,94 @@
 /* ==============================================
-   DESKTOP ENHANCEMENTS (Clean & Professional)
+   DESKTOP ENHANCEMENTS
+   Min-width: 1024px
    ============================================== */
 
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
-/* Subtle lifts only */
+/* Hover effects - only on desktop */
+.about-item:hover,
 .skill-category:hover,
-.project-highlight:hover,
-.contact-item:hover,
-.about-item:hover {
-    border-color: var(--accent-color); /* Highlight border on hover */
+.block-card:hover,
+.challenge-card:hover,
+.personal-project:hover,
+.contact-card:hover {
+    border-color: var(--accent);
     transform: translateY(-2px);
-    transition: all 0.2s ease;
 }
 
-/* Remove the old heavy animations */
-.section { opacity: 1; transform: none; } 
-.hero h1, .cta-button { animation: none; }
+/* Ensure nav links have smooth hover */
+.nav-links a {
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.2s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
 
 /* Desktop Grid Adjustments */
 @media (min-width: 1024px) {
     .skills-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .contact-info {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .about-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .contact-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .blocks-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .personal-projects-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .challenges-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large desktop adjustments */
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1200px;
+    }
+    
+    .blocks-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Theme panel positioning for desktop */
+@media (min-width: 1024px) {
+    .theme-panel {
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .theme-options {
+        right: 100%;
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%) translateX(20px);
+    }
+    
+    .theme-panel.open .theme-options {
+        transform: translateY(-50%) translateX(0);
     }
 }

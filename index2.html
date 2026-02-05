@@ -1,115 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="slate-dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of an AI Developer & Data Science student at Breda University. Specializing in Robotics, RAG systems, Financial AI, and full-stack Engineering.">
-    <title>Vince N&#233;meth - AI Developer & Data Scientist</title>
-    <link rel="stylesheet" href="/src/css/styles-base.css">
-    
-    <link rel="stylesheet" href="/src/css/styles-desktop.css" media="(min-width: 1024px)">
-    
-    <link rel="stylesheet" href="/src/css/styles-mobile.css" media="(max-width: 1023px)">
+    <meta name="description" content="Portfolio of Vince Németh - AI Developer & Data Science student at Breda University. Specializing in Robotics, RAG systems, Financial AI, and full-stack Engineering.">
+    <title>Vince Németh | AI Developer & Data Scientist</title>
+    <link rel="stylesheet" href="./src/css/styles-base.css">
+    <link rel="stylesheet" href="./src/css/styles-desktop.css" media="(min-width: 1024px)">
+    <link rel="stylesheet" href="./src/css/styles-mobile.css" media="(max-width: 1023px)">
 </head>
 <body>
     <div class="bg-animation"></div>
     <div class="progress-bar" id="progressBar"></div>
 
+    <!-- Theme Picker Panel -->
+    <div class="theme-panel" id="themePanel">
+        <button class="theme-panel-toggle" id="themePanelToggle" aria-label="Toggle theme picker">
+            <span class="theme-icon">🎨</span>
+        </button>
+        <div class="theme-options">
+            <h4>Theme</h4>
+            <div class="theme-grid">
+                <button class="theme-btn" data-theme="slate-dark" title="Slate Dark">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #0f172a 50%, #3b82f6 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="pitch-black" title="Pitch Black">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #000000 50%, #22c55e 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="midnight-purple" title="Midnight Purple">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #1a1625 50%, #a855f7 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="ocean-deep" title="Ocean Deep">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #0c1929 50%, #06b6d4 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="forest-dark" title="Forest Dark">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #0f1a14 50%, #22c55e 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="warm-dark" title="Warm Dark">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #1c1512 50%, #f97316 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="mono-dark" title="Monochrome Dark">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #171717 50%, #a3a3a3 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="high-contrast-dark" title="High Contrast Dark">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #000000 50%, #ffff00 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="light-clean" title="Light Clean">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #ffffff 50%, #2563eb 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="light-warm" title="Light Warm">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #fefce8 50%, #ca8a04 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="light-sage" title="Light Sage">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #f0fdf4 50%, #16a34a 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="high-contrast-light" title="High Contrast Light">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #ffffff 50%, #000000 50%)"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo">Vince N&#233;meth</a>
+            <a href="#home" class="logo">VN</a>
             
             <button class="mobile-menu-toggle" id="hamburgerBtn" aria-label="Toggle navigation">
-                <span class="bar top"></span>
-                <span class="bar mid"></span>
-                <span class="bar bot"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </button>
 
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#personal-projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
+                <li><a href="#academic">Academic</a></li>
+                <li><a href="#industry">Industry</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section id="home" class="section hero">
         <div class="container">
-            <h1>Vince N&#233;meth</h1>
-            <p class="subtitle">AI Developer & Data Scientist</p>
-            <p class="description">
-                Results-driven BSc Data Science & AI student capable of building end-to-end systems. 
-                From <strong>Precision Robotics</strong> and <strong>Generative AI</strong> to <strong>Predictive Financial Modeling</strong>, I engineer intelligent solutions that work in the real world.
-            </p>
-            <a href="#about" class="cta-button">Explore My Work</a>
+            <div class="hero-content">
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name">Vince Németh</h1>
+                <p class="hero-title">AI Developer & Data Scientist</p>
+                <p class="hero-description">
+                    BSc Data Science & AI student building end-to-end intelligent systems — 
+                    from <strong>precision robotics</strong> and <strong>generative AI</strong> 
+                    to <strong>predictive financial modeling</strong>.
+                </p>
+                <div class="hero-cta">
+                    <a href="#academic" class="cta-button primary">View My Work</a>
+                    <a href="#contact" class="cta-button secondary">Get In Touch</a>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
             <div class="content-section">
                 <h2 class="section-title">About Me</h2>
-                    <p class="about-description">
-                        I am a Data Science & AI developer at Breda University of Applied Sciences with a focus on production-grade engineering. 
-                        My expertise spans the full stack: I build autonomous **robotic pipelines**, secure **RAG systems** for enterprise, and advanced **predictive models** for healthcare and finance.
-                        I bridge the gap between complex algorithmic research and reliable, user-friendly software.
-                    </p>
+                <p class="about-description">
+                    I'm a Data Science & AI student at Breda University of Applied Sciences with a focus on production-grade engineering. 
+                    My work spans autonomous robotic pipelines, secure RAG systems for enterprise, and advanced predictive models for healthcare and finance.
+                    I bridge the gap between complex algorithmic research and reliable, user-friendly software.
+                </p>
                 
                 <div class="about-grid">
                     <div class="about-item">
-                        <h3>🌍 Languages</h3><br>
-                        <p>• English (Fluent)<br>• Hungarian (Native)<br>• French (Intermediate)</p>
+                        <div class="about-icon">🌍</div>
+                        <h3>Languages</h3>
+                        <p>English (Fluent) · Hungarian (Native) · French (Intermediate)</p>
                     </div>
                     <div class="about-item">
-                        <h3>🏆 Certifications</h3><br>
-                        <p>• Zero to AI Hero (2024)<br>• Cambridge CAE (190/210)</p>
+                        <div class="about-icon">🏆</div>
+                        <h3>Certifications</h3>
+                        <p>Zero to AI Hero (2024) · Cambridge CAE (190/210)</p>
                     </div>
                     <div class="about-item">
-                        <h3>🎯 Interests</h3><br>
-                        <p>• Homelabs & Self-Hosting<br>• Game Development<br>• Travel (16+ countries)</p>
+                        <div class="about-icon">🎯</div>
+                        <h3>Interests</h3>
+                        <p>Homelabs & Self-Hosting · Game Development · Travel (16+ countries)</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
             <div class="content-section">
                 <h2 class="section-title">Technical Skills</h2>
                 <div class="skills-grid">
                     <div class="skill-category">
-                        <h3>🐍 Programming Languages</h3>
+                        <h3>Programming</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Python</span>
                             <span class="skill-tag">PySide6 (Qt)</span>
                             <span class="skill-tag">JavaScript</span>
                             <span class="skill-tag">HTML/CSS</span>
-                            <span class="skill-tag">SQL (PostgreSQL)</span>
+                            <span class="skill-tag">SQL</span>
                         </div>
                     </div>
                     
                     <div class="skill-category">
-                        <h3>🤖 AI & Robotics</h3>
+                        <h3>AI & Robotics</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">XGBoost / LSTM</span>
                             <span class="skill-tag">ResUNet / CNNs</span>
                             <span class="skill-tag">PID Control</span>
                             <span class="skill-tag">RAG Systems</span>
                             <span class="skill-tag">Opentrons</span>
-                            <span class="skill-tag">Explainable AI</span>
                         </div>
                     </div>
                     
                     <div class="skill-category">
-                        <h3>📊 Data Science</h3>
+                        <h3>Data Science</h3>
                         <div class="skill-tags">
-                            <span class="skill-tag">Time Series (SARIMAX)</span>
-                            <span class="skill-tag">HDBSCAN / K-Means</span>
+                            <span class="skill-tag">Time Series</span>
+                            <span class="skill-tag">Clustering</span>
                             <span class="skill-tag">Feature Engineering</span>
                             <span class="skill-tag">A/B Testing</span>
                             <span class="skill-tag">PCA</span>
@@ -117,242 +175,426 @@
                     </div>
                     
                     <div class="skill-category">
-                        <h3>🚀 DevOps & Cloud</h3>
+                        <h3>DevOps & Tools</h3>
                         <div class="skill-tags">
-                            <span class="skill-tag">Docker Compose</span>
+                            <span class="skill-tag">Docker</span>
                             <span class="skill-tag">Traefik</span>
-                            <span class="skill-tag">Linux Administration</span>
-                            <span class="skill-tag">Git/GitHub</span>
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">FastAPI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Journey Section -->
+    <section id="academic" class="section">
+        <div class="container">
+            <div class="content-section">
+                <h2 class="section-title">Academic Journey</h2>
+                <p class="section-subtitle">BSc Applied Data Science & AI at Breda University of Applied Sciences</p>
+                
+                <!-- Year Selector Tabs -->
+                <div class="year-tabs">
+                    <button class="year-tab active" data-year="1">Year 1</button>
+                    <button class="year-tab" data-year="2">Year 2</button>
+                    <button class="year-tab" data-year="3">Year 3</button>
+                </div>
+
+                <!-- Year 1 Content -->
+                <div class="year-content active" data-year="1">
+                    <div class="year-header">
+                        <h3>Foundation Year <span class="year-badge">2024-2025</span></h3>
+                        <p>Building core competencies in data science fundamentals, programming, and machine learning basics.</p>
+                    </div>
+                    
+                    <div class="blocks-grid">
+                        <div class="block-card">
+                            <div class="block-header">
+                                <span class="block-label">Block A</span>
+                                <span class="block-credits">15 ECTS</span>
+                            </div>
+                            <h4>Introduction to Data Science</h4>
+                            <ul class="block-topics">
+                                <li>Introduction to AI & Data Science</li>
+                                <li>Data Visualisation with Power BI</li>
+                                <li>Introduction to Programming in Python</li>
+                                <li>Mathematics Foundations</li>
+                            </ul>
+                            <div class="block-project">
+                                <span class="project-label">Project:</span>
+                                <span class="project-name">Banijay Benelux - OP1 Engagement Analysis</span>
+                            </div>
+                        </div>
+                        
+                        <div class="block-card">
+                            <div class="block-header">
+                                <span class="block-label">Block B</span>
+                                <span class="block-credits">15 ECTS</span>
+                            </div>
+                            <h4>Machine Learning</h4>
+                            <ul class="block-topics">
+                                <li>Data Analysis with Python</li>
+                                <li>ML Algorithm Fundamentals</li>
+                                <li>Calculus & Linear Algebra</li>
+                                <li>Introduction to SQL</li>
+                            </ul>
+                            <div class="block-project">
+                                <span class="project-label">Project:</span>
+                                <span class="project-name">Personal Finance Prediction System</span>
+                            </div>
+                        </div>
+                        
+                        <div class="block-card">
+                            <div class="block-header">
+                                <span class="block-label">Block C</span>
+                                <span class="block-credits">15 ECTS</span>
+                            </div>
+                            <h4>Deep Learning</h4>
+                            <ul class="block-topics">
+                                <li>Introduction to Deep Learning</li>
+                                <li>Responsible & Explainable AI</li>
+                                <li>Human-Centered AI Design</li>
+                                <li>Image Classification</li>
+                            </ul>
+                            <div class="block-project">
+                                <span class="project-label">Project:</span>
+                                <span class="project-name">Healthcare Diagnostic AI</span>
+                            </div>
+                        </div>
+                        
+                        <div class="block-card">
+                            <div class="block-header">
+                                <span class="block-label">Block D</span>
+                                <span class="block-credits">15 ECTS</span>
+                            </div>
+                            <h4>Data Science Lifecycle</h4>
+                            <ul class="block-topics">
+                                <li>Agile Project Management</li>
+                                <li>Time Series Analysis</li>
+                                <li>Data Engineering Pipelines</li>
+                                <li>Stakeholder Management</li>
+                            </ul>
+                            <div class="block-project">
+                                <span class="project-label">Project:</span>
+                                <span class="project-name">End-to-End ML Pipeline</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Year 2 Content -->
+                <div class="year-content" data-year="2">
+                    <div class="year-header">
+                        <h3>Specialisation Year <span class="year-badge">2025-2026</span></h3>
+                        <p>Advanced techniques in NLP, computer vision, robotics, and research methodology.</p>
+                    </div>
+                    
+                    <div class="blocks-grid">
+                        <div class="block-card">
+                            <div class="block-header">
+                                <span class="block-label">Block A</span>
+                                <span class="block-credits">15 ECTS</span>
+                            </div>
+                            <h4>Natural Language Processing</h4>
+                            <ul class="block-topics">
+                                <li>Speech-to-Text Systems</li>
+                                <li>Machine Translation</li>
+                                <li>Text Classification</li>
+                                <li>Transformer Models</li>
+                                <li>Generative AI</li>
+                            </ul>
+                            <div class="block-project">
+                                <span class="project-label">Project:</span>
+                                <span class="project-name">Coming Soon</span>
+                            </div>
+                        </div>
+                        
+                        <div class="block-card">
+                            <div class="block-header">
+                                <span class="block-label">Block B</span>
+                                <span class="block-credits">15 ECTS</span>
+                            </div>
+                            <h4>Computer Vision & Robotics</h4>
+                            <ul class="block-topics">
+                                <li>Traditional Computer Vision</li>
+                                <li>Object Detection</li>
+                                <li>Image Segmentation</li>
+                                <li>Control Theory Fundamentals</li>
+                                <li>Reinforcement Learning</li>
+                            </ul>
+                            <div class="block-project">
+                                <span class="project-label">Project:</span>
+                                <span class="project-name">Coming Soon</span>
+                            </div>
+                        </div>
+                        
+                        <div class="block-card">
+                            <div class="block-header">
+                                <span class="block-label">Block C</span>
+                                <span class="block-credits">15 ECTS</span>
+                            </div>
+                            <h4>Research Methodology</h4>
+                            <ul class="block-topics">
+                                <li>Research Methods</li>
+                                <li>Quantitative/Qualitative Analysis</li>
+                                <li>Probability Theory</li>
+                                <li>Academic Skills</li>
+                            </ul>
+                            <div class="block-project">
+                                <span class="project-label">Project:</span>
+                                <span class="project-name">Coming Soon</span>
+                            </div>
+                        </div>
+                        
+                        <div class="block-card">
+                            <div class="block-header">
+                                <span class="block-label">Block D</span>
+                                <span class="block-credits">15 ECTS</span>
+                            </div>
+                            <h4>Deploying ML Solutions</h4>
+                            <ul class="block-topics">
+                                <li>Advanced Programming</li>
+                                <li>MLOps Frameworks</li>
+                                <li>MLOps Tools</li>
+                                <li>Cloud Computing</li>
+                            </ul>
+                            <div class="block-project">
+                                <span class="project-label">Project:</span>
+                                <span class="project-name">Coming Soon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Year 3 Content -->
+                <div class="year-content" data-year="3">
+                    <div class="year-header">
+                        <h3>Professional Year <span class="year-badge">2026-2027</span></h3>
+                        <p>Specialisation projects, internship, and preparation for industry or master's programmes.</p>
+                    </div>
+                    
+                    <div class="blocks-grid wide">
+                        <div class="block-card semester">
+                            <div class="block-header">
+                                <span class="block-label">Semester 5</span>
+                                <span class="block-credits">30 ECTS</span>
+                            </div>
+                            <h4>Specialisation Project</h4>
+                            <p class="block-description">Role specialisation and consultancy skills development through an extended industry project.</p>
+                        </div>
+                        
+                        <div class="block-card semester">
+                            <div class="block-header">
+                                <span class="block-label">Semester 6</span>
+                                <span class="block-credits">30 ECTS</span>
+                            </div>
+                            <h4>Internship / Exchange</h4>
+                            <p class="block-description">Choose from: Specialisation Project 2, Work Placement, or Exchange Abroad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Industry Challenges Section -->
+            <div class="content-section challenges-section">
+                <h2 class="section-title">Industry Challenges</h2>
+                <p class="section-subtitle">Real-world projects completed alongside academic blocks</p>
+                
+                <div class="challenges-grid">
+                    <div class="challenge-card featured">
+                        <div class="challenge-badge">Featured</div>
+                        <h4>Tobroco Engineering Assistant</h4>
+                        <p class="challenge-client">Tobroco-Giant</p>
+                        <p class="challenge-description">
+                            AI-powered documentation system with semantic search, RAG pipeline, and assisted authoring for engineering manuals.
+                        </p>
+                        <div class="challenge-tech">
+                            <span>Python</span>
+                            <span>FastAPI</span>
+                            <span>ChromaDB</span>
+                            <span>RAG</span>
+                        </div>
+                        <a href="#" class="challenge-link">View Project →</a>
+                    </div>
+                    
+                    <div class="challenge-card featured">
+                        <div class="challenge-badge">Featured</div>
+                        <h4>NPEC Plant Phenotyping</h4>
+                        <p class="challenge-client">Netherlands Plant Eco-phenotyping Centre</p>
+                        <p class="challenge-description">
+                            Automated high-throughput phenotyping using Deep ResUNet for Arabidopsis root segmentation in the Hades robotic system.
+                        </p>
+                        <div class="challenge-tech">
+                            <span>Python</span>
+                            <span>Deep Learning</span>
+                            <span>Computer Vision</span>
+                            <span>Robotics</span>
+                        </div>
+                        <a href="#" class="challenge-link">View Project →</a>
+                    </div>
+                    
+                    <div class="challenge-card">
+                        <h4>Latent Space</h4>
+                        <p class="challenge-client">BUas DataLab</p>
+                        <p class="challenge-description">
+                            Generative AI exploration project investigating latent space representations.
+                        </p>
+                        <div class="challenge-tech">
+                            <span>Python</span>
+                            <span>Generative AI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry & Freelance Section -->
+    <section id="industry" class="section">
+        <div class="container">
+            <div class="content-section">
+                <h2 class="section-title">Industry Experience</h2>
+                
+                <div class="experience-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2023 - Present</span>
+                            <h3 class="timeline-title">Freelance Software Engineer</h3>
+                            <p class="timeline-org">Independent</p>
+                            <p class="timeline-description">
+                                Development of professional-grade tools and open-source software.
+                            </p>
+                            <div class="timeline-projects">
+                                <div class="mini-project">
+                                    <strong>CineSlice</strong> — Desktop video frame extractor with multi-threaded FFmpeg pipeline (Python, PySide6)
+                                </div>
+                                <div class="mini-project">
+                                    <strong>Infrastructure Monitor</strong> — Self-hosted alerting system with Docker, Traefik, and SEO validation
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="skill-category">
-                        <h3>🌐 Web & App Dev</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">FastAPI</span>
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">FFmpeg</span>
-                            <span class="skill-tag">Streamlit</span>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Summer 2024</span>
+                            <h3 class="timeline-title">Software Engineering Intern</h3>
+                            <p class="timeline-org">Linamar Hungary</p>
+                            <p class="timeline-description">
+                                Industrial software optimization and debugging. Collaborated with cross-functional teams to streamline manufacturing workflows.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Summer 2024</span>
+                            <h3 class="timeline-title">Supplier Quality Assurance Assistant</h3>
+                            <p class="timeline-org">Valeo</p>
+                            <p class="timeline-description">
+                                Supported supplier audits and process data analysis. Gained insight into quality control logic used in industrial automation.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="experience" class="section">
-        <div class="container">
-            <div class="content-section">
-                <h2 class="section-title">Experience</h2>
-                <div class="experience-timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">2024 - Present</div>
-                        <h3 class="timeline-title">AI Developer & Researcher (Student)</h3>
-                        <div class="timeline-description">
-                            <strong>Breda University of Applied Sciences (Student Projects)</strong>
-                            <br><br>
-                            Lead developer on diverse initiatives, demonstrating full-stack competency from algorithm design to physical hardware deployment.
-                            
-                            <div class="project-highlight">
-                                <strong>🌱 Hades Automated Phenotyping (NPEC):</strong> 
-                                Engineered an end-to-end robotics pipeline for the **Netherlands Plant Eco-phenotyping Centre**. 
-                                Solved a critical research bottleneck by replacing manual labor with a **ResUNet** segmentation model and **PID-controlled** robotic inoculation. 
-                                <br><em>Impact:</em> Achieved **40x throughput increase** (50 to 2,000 dishes/day) with **<0.1mm precision**.
-                            </div>
-
-                            <div class="project-highlight">
-                                <strong>📈 Digital Advisor (Stock Investment):</strong> 
-                                Built a hybrid forecasting engine using **SARIMAX** (Time-Series) and **LSTM** (Deep Learning) to predict NASDAQ-100 trends. 
-                                Achieved **98.5% R² accuracy** on major stocks (META). 
-                                Developed a **PostgreSQL** backend and interactive dashboard for real-time trading simulation.
-                            </div>
-
-                            <div class="project-highlight">
-                                <strong>📚 Tobroco Engineering RAG System:</strong> 
-                                Designed a privacy-focused Q&A system for engineering standards using **Llama 3**, **FastAPI**, and **ChromaDB**. 
-                                Implemented "Red Teaming" defenses (XML walls, anti-roleplay) to prevent hallucinations and ensure secure, cited responses.
-                            </div>
-
-                            <div class="project-highlight">
-                                <strong>🩺 Diabetic Patient Identification:</strong> 
-                                Engineered a predictive pipeline for hospital readmission and stay duration using **XGBoost** (MAE ~1.6 days) and **Random Forest**. 
-                                Performed advanced patient clustering with **HDBSCAN** (Silhouette Score 0.71) and **PCA**, solving critical data quality issues through rigorous cleaning.
-                            </div>
-
-                            <div class="project-highlight">
-                                <strong>🚗 Vehicle Damage Assessment (AI Research):</strong> 
-                                Developed a Deep CNN pipeline to classify vehicle damage (Dents vs. Cracks) with **87% accuracy**. 
-                                Integrated **Explainable AI (Grad-CAM++)** to generate saliency maps, visualizing *why* damage was detected to increase user trust.
-                            </div>
-
-                            <div class="project-highlight">
-                                <strong>👁️ Latent Space (Interactive Installation):</strong> 
-                                Co-engineered a gaze-controlled art system running on **Jetson Orin Nano**. 
-                                Built a pipeline connecting real-time eye tracking (**MediaPipe**) to Deep Learning classification and thermal printing hardware.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-date">Summer 2025</div>
-                        <h3 class="timeline-title">Industrial Software Associate</h3>
-                        <div class="timeline-description">
-                            <strong>Valeo</strong>
-                            <br><br>
-                            Contributed to industrial software optimization and debugging.
-                            Collaborated with cross-functional teams to streamline manufacturing workflows through software solutions.
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-date">Summer 2024</div>
-                        <h3 class="timeline-title">Supplier Quality Assurance Assistant</h3>
-                        <div class="timeline-description">
-                            <strong>Valeo</strong>
-                            <br><br>
-                            <details>
-                                <summary>Supported supplier audits and process data analysis. Gained critical insight into quality control logic used in industrial automation.</summary>
-                                <div class="details-content">
-                                    <p>Assisted in the verification of supplier compliance, managed data logging for quality metrics, and helped optimize documentation workflows.</p>
-                                </div>
-                            </details>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-date">2023 - Present</div>
-                        <h3 class="timeline-title">Freelance Software Engineer</h3>
-                        <div class="timeline-description">
-                            <strong>Independent Projects</strong>
-                            <br><br>
-                            Development of professional-grade tools and open-source software.
-                            
-                            <div class="project-highlight">
-                                <strong>⚡ Local Alerting & SEO Monitor:</strong> 
-                                Engineered a self-contained infrastructure monitoring tool using **Docker** and **Traefik**. 
-                                Implemented automated downtime detection, SEO validation, and JSONL reporting pipelines to ensure web service reliability.
-                            </div>
-
-                            <div class="project-highlight">
-                                <strong>🎬 CineSlice (Desktop Application):</strong>
-                                Engineered a precision video extraction tool using **Python 3.11** and **PySide6 (Qt)**. 
-                                Architected a multi-threaded **FFmpeg** pipeline with `QThread` to ensure UI responsiveness and lossless image retrieval. 
-                                Implemented "Smart Estimation" logic and robust crash reporting for a professional user experience.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="personal-projects" class="section">
-        <div class="container">
+            
+            <!-- Personal Projects -->
             <div class="content-section">
                 <h2 class="section-title">Personal Projects</h2>
-                <p class="project-description">Selected independent engineering and development work.</p>
-                <ul class="project-list">
-                    <div class="project-highlight">
-                        Developed a 2D strategy game using Godot Engine (C#/GDScript)
+                <div class="personal-projects-grid">
+                    <div class="personal-project">
+                        <span class="project-icon">🎮</span>
+                        <h4>2D Strategy Game</h4>
+                        <p>Godot Engine (GDScript)</p>
                     </div>
-                    <div class="project-highlight">
-                        Built a lightweight Data Science library (Pandas-clone) in pure Python
+                    <div class="personal-project">
+                        <span class="project-icon">📊</span>
+                        <h4>Data Science Library</h4>
+                        <p>Pandas-clone in pure Python</p>
                     </div>
-                    <div class="project-highlight">
-                        Architected a home automation ecosystem using Raspberry Pi & Home Assistant
+                    <div class="personal-project">
+                        <span class="project-icon">🏠</span>
+                        <h4>Home Automation</h4>
+                        <p>Raspberry Pi & Home Assistant</p>
                     </div>
-                    <div class="project-highlight">
-                        Advanced Android customization (Custom ROMs & Kernel tuning)
-                    </div>
-                    <div class="project-highlight">
-                        Deployed and managed TrueNAS scale storage servers
-                    </div>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" class="section">
-        <div class="container">
-            <div class="content-section">
-                <h2 class="section-title">Education</h2>
-                <div class="experience-timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">2024 - Present</div>
-                        <h3 class="timeline-title">BSc Applied Data Science & Artificial Intelligence</h3>
-                        <div class="timeline-description">
-                            <strong>Breda University of Applied Sciences</strong>
-                            <br><br>
-                            Intensive curriculum covering Generative AI, Deep Learning, and Software Engineering.
-                            
-                            <div class="timeline-item-highlight">
-                                <strong>Core Modules:</strong> Neural Networks • NLP & RAG • Computer Vision • Software Architecture • Human-Centered Design • Agile Management
-                            </div>
-                            
-                            <div class="timeline-item-highlight">
-                                <strong>Practical Focus:</strong> Delivering functional AI prototypes for real-world clients in the DataLab.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-date">2019 - 2024</div>
-                        <h3 class="timeline-title">French Bilingual Faculty</h3>
-                        <div class="timeline-description">
-                            <strong>Vetési Albert Gimnázium</strong>
-                            <br><br>
-                            Specialized in Advanced Mathematics and Computer Science with bilingual instruction.
-                        </div>
+                    <div class="personal-project">
+                        <span class="project-icon">💾</span>
+                        <h4>TrueNAS Server</h4>
+                        <p>Storage infrastructure</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <div class="content-section">
+            <div class="content-section contact-section">
                 <h2 class="section-title">Let's Connect</h2>
-                <div class="contact-info">
-                    <a href="mailto:nemevinc@gmail.com">
-                        <div class="contact-item">
-                            <h3>📧 Email</h3>
-                            <p>nemevinc@gmail.com</p>
-                        </div>
+                <p class="contact-intro">Ready to build the next generation of intelligent software.</p>
+                
+                <div class="contact-grid">
+                    <a href="mailto:hello@nmthvince.xyz" class="contact-card">
+                        <span class="contact-icon">📧</span>
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">hello@nmthvince.xyz</span>
                     </a>
-                    <a href="https://linkedin.com/in/vince-nemeth/" target="_blank" rel="noopener noreferrer">
-                        <div class="contact-item">
-                            <h3>💼 LinkedIn</h3>
-                            <p>Connect with me</p>
-                        </div>
+                    <a href="https://linkedin.com/in/vince-nemeth/" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <span class="contact-icon">💼</span>
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">Connect with me</span>
                     </a>
-                    <a href="https://github.com/N0tN3o" target="_blank" rel="noopener noreferrer">
-                        <div class="contact-item">
-                            <h3>🐙 GitHub</h3>
-                            <p>View Code</p>
-                        </div>
+                    <a href="https://github.com/N0tN3o" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <span class="contact-icon">🐙</span>
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value">View my code</span>
                     </a>
-                    <div class="contact-item">
-                        <h3>📱 Available For</h3>
-                        <p>Internships • AI Consulting • Development</p>
-                    </div>
                 </div>
                 
-                <div class="footer-message">
-                    <p>Ready to build the next generation of intelligent software.</p>
+                <div class="availability">
+                    <span class="availability-dot"></span>
+                    Available for: Internships · AI Consulting · Development
                 </div>
-
             </div>
         </div>
     </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 Vince Németh. Built with care.</p>
+        </div>
+    </footer>
     
-    <script src="/src/js/script.js"></script>
+    <script src="./src/js/script.js"></script>
     <script>
+        // Service Worker Registration
         if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/src/js/sw.js')
-                    .then((registration) => console.log('SW registered: ', registration))
-                    .catch((err) => console.log('SW registration failed: ', err));
+            window.addEventListener('load', async () => {
+                try {
+                    const registration = await navigator.serviceWorker.register('./src/js/sw.js');
+                    console.log('SW registered:', registration.scope);
+                    
+                    // Check for updates periodically
+                    registration.addEventListener('updatefound', () => {
+                        const newWorker = registration.installing;
+                        newWorker.addEventListener('statechange', () => {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                // New content available, you could show a notification here
+                                console.log('New content available, refresh to update.');
+                            }
+                        });
+                    });
+                } catch (error) {
+                    console.error('SW registration failed:', error);
+                }
             });
         }
     </script>
