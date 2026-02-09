@@ -256,6 +256,10 @@ strong {
 /* ==============================================
    THEME PICKER PANEL
    ============================================== */
+.theme-icon {
+    font-size: 1.2rem;
+    color: var(--primary);
+}
 
 .theme-panel {
     position: fixed;
@@ -599,8 +603,9 @@ nav {
 }
 
 .about-icon {
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin-bottom: 0.75rem;
+    color: var(--primary);
 }
 
 .about-item h3 {
@@ -1069,9 +1074,10 @@ nav {
 }
 
 .project-icon {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     display: block;
     margin-bottom: 0.5rem;
+    color: var(--primary);
 }
 
 .personal-project h4 {
@@ -1119,8 +1125,9 @@ nav {
 }
 
 .contact-icon {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    color: var(--primary);
 }
 
 .contact-label {
