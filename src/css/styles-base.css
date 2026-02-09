@@ -758,6 +758,12 @@ nav {
     border-radius: 10px;
     padding: 1.25rem;
     transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.block-card .block-topics {
+    flex: 1;
 }
 
 .block-card.semester {
@@ -829,6 +835,40 @@ nav {
 .project-name {
     color: var(--text-main);
     font-weight: 500;
+}
+
+.project-description {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin-top: 0.4rem;
+}
+
+.project-details {
+    margin-top: 0.4rem;
+}
+
+.project-details summary {
+    font-size: 0.85rem;
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+}
+
+.project-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.project-details summary::before {
+    content: "▸ ";
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.project-details[open] summary::before {
+    content: "▾ ";
+    color: var(--primary);
+    font-weight: 700;
 }
 
 .block-description {
