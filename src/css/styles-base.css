@@ -649,6 +649,7 @@ nav {
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
+    list-style: none;
 }
 
 .skill-tag {
@@ -946,9 +947,10 @@ nav {
     flex-wrap: wrap;
     gap: 0.4rem;
     margin-bottom: 1rem;
+    list-style: none;
 }
 
-.challenge-tech span {
+.challenge-tech li {
     font-size: 0.75rem;
     padding: 0.2rem 0.6rem;
     background: var(--bg-card);
@@ -1037,6 +1039,7 @@ nav {
 
 .timeline-projects {
     margin-top: 1rem;
+    list-style: none;
 }
 
 .mini-project {
