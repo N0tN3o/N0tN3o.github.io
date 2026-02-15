@@ -67,11 +67,26 @@
 }
 
 [data-theme="high-contrast-dark"] {
-    --primary: #ffff00; --primary-hover: #fef08a; --accent: #fde047;
-    --text-main: #ffffff; --text-muted: #fef9c3;
-    --bg-body: #000000; --bg-card: #000000; --bg-card-hover: #1a1a1a;
-    --border: #ffffff; --shadow: 0 4px 6px -1px rgba(255,255,0,0.2);
-    --nav-bg: rgba(0,0,0,0.95);
+    --primary: #ffff00;
+    --primary-hover: #fef08a;
+    --accent: #fde047;
+    --text-main: #ffffff;
+    --text-muted: #fef9c3;
+    --bg-body: #000000;
+    --bg-card: #000000;
+    --bg-card-hover: #1a1a1a;
+    --border: #ffffff;
+    --shadow: 0 4px 6px -1px rgba(255, 255, 0, 0.2);
+    --nav-bg: rgba(0, 0, 0, 0.95);
+}
+
+/* High-contrast-dark: force dark text on bright yellow backgrounds */
+[data-theme="high-contrast-dark"] .cta-button.primary,
+[data-theme="high-contrast-dark"] .year-tab.active,
+[data-theme="high-contrast-dark"] .year-badge,
+[data-theme="high-contrast-dark"] .challenge-badge,
+[data-theme="high-contrast-dark"] .form-submit {
+    color: #000000;
 }
 
 [data-theme="light-clean"] {
