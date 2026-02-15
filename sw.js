@@ -1,13 +1,11 @@
 // ==============================================
 // Service Worker - Caching & Offline Fallback
-// Network-first strategy: always fetch fresh content,
-// fall back to cache only when offline.
+// Network-first strategy
 // ==============================================
 
-const CACHE_VERSION = '1.1';
+const CACHE_VERSION = '2.1';
 const CACHE_NAME = `site-v${CACHE_VERSION}`;
 
-// Assets to pre-cache for offline fallback
 const PRECACHE_ASSETS = [
     './',
     './index.html',
@@ -15,12 +13,9 @@ const PRECACHE_ASSETS = [
     './src/css/styles-desktop.css',
     './src/css/styles-mobile.css',
     './src/js/script.js',
+    './images/icons.svg',
     './offline.html'
 ];
-
-// ==============================================
-// INSTALL EVENT
-// ==============================================
 
 self.addEventListener('install', (event) => {
     console.log('[SW] Installing v' + CACHE_VERSION);
@@ -39,17 +34,12 @@ self.addEventListener('install', (event) => {
     );
 });
 
-// ==============================================
-// ACTIVATE EVENT
-// ==============================================
-
 self.addEventListener('activate', (event) => {
     console.log('[SW] Activating v' + CACHE_VERSION);
     event.waitUntil(
         caches.keys()
             .then(keys => Promise.all(
-                keys
-                    .filter(key => key !== CACHE_NAME)
+                keys.filter(key => key !== CACHE_NAME)
                     .map(key => {
                         console.log('[SW] Removing old cache:', key);
                         return caches.delete(key);
@@ -59,20 +49,14 @@ self.addEventListener('activate', (event) => {
     );
 });
 
-// ==============================================
-// FETCH EVENT — Network-first, cache fallback
-// ==============================================
-
 self.addEventListener('fetch', (event) => {
     const request = event.request;
-
     if (request.method !== 'GET') return;
     if (!request.url.startsWith('http')) return;
 
     event.respondWith(
         fetch(request)
             .then(response => {
-                // Got a fresh response — update the cache and return it
                 if (response.ok) {
                     const clone = response.clone();
                     caches.open(CACHE_NAME).then(cache => cache.put(request, clone));
@@ -80,7 +64,6 @@ self.addEventListener('fetch', (event) => {
                 return response;
             })
             .catch(() => {
-                // Network failed — try cache, then offline page for HTML
                 return caches.match(request).then(cached => {
                     if (cached) return cached;
                     const accept = request.headers.get('Accept') || '';

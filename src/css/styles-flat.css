@@ -1,0 +1,85 @@
+/* ==============================================
+   FLAT VARIANT OVERRIDES
+   Used by index2.html — strips big card containers,
+   uses horizontal rules and wider spacing instead.
+   ============================================== */
+
+/* Remove card backgrounds from content-section */
+.content-section {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0;
+}
+
+/* Separator between content-sections within the same parent */
+.content-section + .content-section {
+    border-top: 1px solid var(--border);
+    padding-top: 2.5rem;
+}
+
+/* Section title gets a left accent bar instead of bottom border */
+.section-title {
+    border-bottom: none;
+    padding-bottom: 0;
+    padding-left: 1rem;
+    border-left: 3px solid var(--primary);
+}
+
+/* Inner cards get slightly more contrast in flat mode */
+.about-item,
+.skill-category,
+.block-card,
+.challenge-card,
+.personal-project,
+.contact-card,
+.contact-side-card {
+    background: var(--bg-card);
+    border-color: color-mix(in srgb, var(--border) 60%, transparent);
+}
+
+/* Wider section spacing for flat layout */
+.section {
+    padding: 4rem 0;
+}
+
+.section + .section {
+    border-top: 1px solid color-mix(in srgb, var(--border) 40%, transparent);
+}
+
+/* Year tabs lose the background context — add subtle bg strip */
+.year-tabs.sticky {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    background: var(--bg-body);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Connect section in flat mode */
+.connect-section .section-title {
+    border-left: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+/* Contact page adjustments */
+.contact-page-form-area {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+/* Mobile adjustments for flat */
+@media (max-width: 1023px) {
+    .year-tabs.sticky {
+        margin-left: -1.25rem;
+        margin-right: -1.25rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}

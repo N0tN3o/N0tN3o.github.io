@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="slate-dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Vince Németh — AI Developer & Data Science student. Send an inquiry or connect via LinkedIn and GitHub.">
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact | Vince Németh">
+    <meta property="og:description" content="Get in touch — AI consulting, freelance projects, internships, or collaboration.">
+    <meta property="og:image" content="https://yourdomain.com/images/og-preview.png">
+    <meta property="og:url" content="https://yourdomain.com/contact.html">
+
+    <title>Contact | Vince Németh</title>
+    <link rel="stylesheet" href="./src/css/styles-base.css">
+    <link rel="stylesheet" href="./src/css/styles-desktop.css" media="(min-width: 1024px)">
+    <link rel="stylesheet" href="./src/css/styles-mobile.css" media="(max-width: 1023px)">
+    <link rel="icon" href="./images/webicon2.ico" sizes="any">
+    <link rel="shortcut icon" href="./images/webicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <!-- Theme Picker Panel -->
+    <aside class="theme-panel" id="themePanel">
+        <button class="theme-panel-toggle" id="themePanelToggle" aria-label="Toggle theme picker">
+            <svg class="icon"><use href="./images/icons.svg#icon-palette"/></svg>
+        </button>
+        <div class="theme-options">
+            <h4>Theme</h4>
+            <div class="theme-grid">
+                <button class="theme-btn" data-theme="slate-dark" title="Slate Dark">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #0f172a 50%, #3b82f6 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="pitch-black" title="Pitch Black">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #000000 50%, #22c55e 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="midnight-purple" title="Midnight Purple">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #1a1625 50%, #a855f7 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="ocean-deep" title="Ocean Deep">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #0c1929 50%, #06b6d4 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="forest-dark" title="Forest Dark">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #0f1a14 50%, #22c55e 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="warm-dark" title="Warm Dark">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #1c1512 50%, #f97316 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="mono-dark" title="Monochrome Dark">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #171717 50%, #a3a3a3 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="high-contrast-dark" title="High Contrast Dark">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #000000 50%, #ffff00 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="light-clean" title="Light Clean">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #ffffff 50%, #2563eb 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="light-warm" title="Light Warm">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #fefce8 50%, #ca8a04 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="light-sage" title="Light Sage">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #f0fdf4 50%, #16a34a 50%)"></span>
+                </button>
+                <button class="theme-btn" data-theme="high-contrast-light" title="High Contrast Light">
+                    <span class="theme-preview" style="background: linear-gradient(135deg, #ffffff 50%, #000000 50%)"></span>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Navigation — Contact page variant -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="./index.html" class="logo">VN</a>
+            
+            <button class="mobile-menu-toggle" id="hamburgerBtn" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li>
+                    <a href="./index.html" class="nav-back-link">
+                        <svg class="icon"><use href="./images/icons.svg#icon-arrow-left"/></svg>
+                        Portfolio
+                    </a>
+                </li>
+                <li><a href="./index.html#about">About</a></li>
+                <li><a href="./index.html#projects">Projects</a></li>
+                <li><a href="./index.html#industry">Industry</a></li>
+                <li>
+                    <a href="#" class="nav-cv-link" download>
+                        <svg class="icon"><use href="./images/icons.svg#icon-download"/></svg>
+                        CV
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="section contact-page-hero visible">
+            <div class="container">
+                <div class="contact-hero-header">
+                    <h1 class="contact-hero-name">Let's Build Something Together</h1>
+                    <p class="contact-hero-tagline">Whether it's an AI project, a freelance opportunity, or just a conversation about tech — I'd love to hear from you.</p>
+                </div>
+
+                <section class="content-section">
+                    <h2 class="section-title">
+                        <svg class="icon"><use href="./images/icons.svg#icon-envelope"/></svg>
+                        Send a Message
+                    </h2>
+
+                    <div class="contact-page-form-area">
+                        <form class="inquiry-form" action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                            <input type="hidden" name="subject" value="New inquiry from portfolio">
+                            <input type="hidden" name="redirect" value="">
+                            <input type="checkbox" name="botcheck" style="display: none;">
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="page-name">Name</label>
+                                    <input type="text" id="page-name" name="name" required placeholder="Your name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="page-email">Email</label>
+                                    <input type="email" id="page-email" name="email" required placeholder="you@example.com">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="page-subject">Subject</label>
+                                <select id="page-subject" name="inquiry_type">
+                                    <option value="general">General Inquiry</option>
+                                    <option value="internship">Internship Opportunity</option>
+                                    <option value="consulting">AI Consulting</option>
+                                    <option value="freelance">Freelance Project</option>
+                                    <option value="collaboration">Collaboration</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="page-message">Message</label>
+                                <textarea id="page-message" name="message" required placeholder="Tell me about your project or opportunity..."></textarea>
+                            </div>
+                            <button type="submit" class="form-submit">Send Message</button>
+                            <p class="form-note">Powered by Web3Forms — no spam, I promise.</p>
+                        </form>
+                    </div>
+                </section>
+
+                <div class="contact-page-divider">
+                    <p class="contact-page-divider-text">You can also find me on these platforms</p>
+                </div>
+
+                <section class="content-section contact-page-socials-section">
+                    <div class="contact-page-socials">
+                        <a href="https://linkedin.com/in/vince-nemeth/" target="_blank" rel="noopener noreferrer" class="contact-side-card">
+                            <span class="contact-icon">
+                                <svg class="icon"><use href="./images/icons.svg#icon-linkedin"/></svg>
+                            </span>
+                            <span class="contact-side-label">LinkedIn</span>
+                            <span class="contact-side-value">Connect with me</span>
+                        </a>
+                        <a href="https://github.com/N0tN3o" target="_blank" rel="noopener noreferrer" class="contact-side-card">
+                            <span class="contact-icon">
+                                <svg class="icon"><use href="./images/icons.svg#icon-github"/></svg>
+                            </span>
+                            <span class="contact-side-label">GitHub</span>
+                            <span class="contact-side-value">View my code</span>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p><small>&copy; 2025 Vince Németh. Built with care.</small></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburgerBtn');
+            const navLinks = document.getElementById('navLinks');
+
+            // Theme
+            const savedTheme = localStorage.getItem('portfolio-theme') || 'slate-dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+
+            const themePanel = document.getElementById('themePanel');
+            const themePanelToggle = document.getElementById('themePanelToggle');
+            if (themePanel && themePanelToggle) {
+                themePanelToggle.addEventListener('click', () => themePanel.classList.toggle('open'));
+
+                themePanel.querySelectorAll('.theme-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const theme = btn.dataset.theme;
+                        document.documentElement.setAttribute('data-theme', theme);
+                        localStorage.setItem('portfolio-theme', theme);
+                        themePanel.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                    });
+                });
+
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const activeBtn = themePanel.querySelector(`.theme-btn[data-theme="${currentTheme}"]`);
+                if (activeBtn) activeBtn.classList.add('active');
+
+                document.addEventListener('click', (e) => {
+                    if (!themePanel.contains(e.target)) themePanel.classList.remove('open');
+                });
+            }
+
+            // Mobile nav
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', () => {
+                    const isActive = hamburger.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                    document.body.classList.toggle('menu-open', isActive);
+                });
+
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

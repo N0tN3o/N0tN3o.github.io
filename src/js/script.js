@@ -17,13 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', (e) => {
             const href = anchor.getAttribute('href');
-            
-            // Skip if href is just "#" or empty
-            if (!href || href === '#') {
-                e.preventDefault();
-                return;
-            }
-            
+            if (!href || href === '#') { e.preventDefault(); return; }
             try {
                 const target = document.querySelector(href);
                 if (target) {
@@ -31,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             } catch (error) {
-                // Invalid selector, let browser handle it normally
                 console.warn('Invalid anchor href:', href);
             }
         });
@@ -44,12 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.addEventListener('click', () => {
             const isActive = hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
-            
-            // Prevent body scroll when menu is open
             document.body.classList.toggle('menu-open', isActive);
         });
 
-        // Close menu when a link is clicked
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
@@ -58,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
                 hamburger.classList.remove('active');
@@ -82,19 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==============================================
     // THEME SYSTEM
     // ==============================================
-    
-    // Load saved theme or use default
     const savedTheme = localStorage.getItem('portfolio-theme') || 'slate-dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
     updateActiveThemeButton(savedTheme);
 
-    // Toggle theme panel
     if (themePanelToggle && themePanel) {
         themePanelToggle.addEventListener('click', () => {
             themePanel.classList.toggle('open');
         });
 
-        // Close panel when clicking outside
         document.addEventListener('click', (e) => {
             if (!themePanel.contains(e.target)) {
                 themePanel.classList.remove('open');
@@ -102,7 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Theme button clicks
     themeButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             const theme = btn.getAttribute('data-theme');
@@ -124,12 +108,10 @@ document.addEventListener('DOMContentLoaded', () => {
     yearTabs.forEach(tab => {
         tab.addEventListener('click', () => {
             const year = tab.getAttribute('data-year');
-            
-            // Update tabs
-            yearTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            
-            // Update content
+            yearTabs.forEach(t => {
+                t.classList.toggle('active', t === tab);
+                t.setAttribute('aria-selected', t === tab);
+            });
             yearContents.forEach(content => {
                 content.classList.toggle('active', content.getAttribute('data-year') === year);
             });
@@ -137,9 +119,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==============================================
+    // STICKY YEAR TABS (dynamic top offset)
+    // Activates on screens <= 768px only
+    // ==============================================
+    const yearTabsEl = document.querySelector('.year-tabs');
+
+    function updateStickyTabs() {
+        if (!yearTabsEl) return;
+
+        if (window.innerWidth <= 768) {
+            // Dynamically measure nav height
+            const nav = document.getElementById('navbar');
+            const navHeight = nav ? nav.offsetHeight : 56;
+            document.documentElement.style.setProperty('--nav-height', navHeight + 'px');
+            yearTabsEl.classList.add('sticky');
+        } else {
+            yearTabsEl.classList.remove('sticky');
+        }
+    }
+
+    updateStickyTabs();
+    window.addEventListener('resize', updateStickyTabs);
+
+    // ==============================================
     // SECTION FADE-IN ON SCROLL
     // ==============================================
-    const observer = new IntersectionObserver((entries) => {
+    const fadeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
@@ -148,22 +153,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.section').forEach(section => {
-        observer.observe(section);
+        fadeObserver.observe(section);
     });
 
     // ==============================================
     // ACTIVE NAV LINK HIGHLIGHTING
     // ==============================================
     const sections = document.querySelectorAll('.section');
-    const navLinkItems = document.querySelectorAll('.nav-links a');
+    const navLinkItems = document.querySelectorAll('.nav-links a[href^="#"]');
 
     const highlightNavOnScroll = () => {
         let current = '';
-        
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
             if (window.scrollY >= sectionTop - 200) {
                 current = section.getAttribute('id');
             }
