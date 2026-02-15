@@ -16,6 +16,7 @@
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
     --nav-bg: rgba(15, 23, 42, 0.95);
     --nav-height: 56px;
+    --primary-text: white;
 }
 
 [data-theme="pitch-black"] {
@@ -106,6 +107,7 @@
     --primary: #ffff00;
     --primary-hover: #fef08a;
     --accent: #fde047;
+    --primary-text: #000000;
     --text-main: #ffffff;
     --text-muted: #fef9c3;
     --bg-body: #000000;
@@ -114,15 +116,6 @@
     --border: #ffffff;
     --shadow: 0 4px 6px -1px rgba(255, 255, 0, 0.2);
     --nav-bg: rgba(0, 0, 0, 0.95);
-}
-
-/* High-contrast-dark: force dark text on bright yellow backgrounds */
-[data-theme="high-contrast-dark"] .cta-button.primary,
-[data-theme="high-contrast-dark"] .year-tab.active,
-[data-theme="high-contrast-dark"] .year-badge,
-[data-theme="high-contrast-dark"] .challenge-badge,
-[data-theme="high-contrast-dark"] .form-submit {
-    color: #000000;
 }
 
 [data-theme="light-clean"] {
@@ -366,6 +359,20 @@ strong {
     border-radius: 4px;
 }
 
+/* Theme preview swatches */
+.theme-btn[data-theme="slate-dark"] .theme-preview        { background: linear-gradient(135deg, #0f172a 50%, #3b82f6 50%); }
+.theme-btn[data-theme="pitch-black"] .theme-preview       { background: linear-gradient(135deg, #000000 50%, #22c55e 50%); }
+.theme-btn[data-theme="midnight-purple"] .theme-preview    { background: linear-gradient(135deg, #1a1625 50%, #a855f7 50%); }
+.theme-btn[data-theme="ocean-deep"] .theme-preview         { background: linear-gradient(135deg, #0c1929 50%, #06b6d4 50%); }
+.theme-btn[data-theme="forest-dark"] .theme-preview        { background: linear-gradient(135deg, #0f1a14 50%, #22c55e 50%); }
+.theme-btn[data-theme="warm-dark"] .theme-preview          { background: linear-gradient(135deg, #1c1512 50%, #f97316 50%); }
+.theme-btn[data-theme="mono-dark"] .theme-preview          { background: linear-gradient(135deg, #171717 50%, #a3a3a3 50%); }
+.theme-btn[data-theme="high-contrast-dark"] .theme-preview { background: linear-gradient(135deg, #000000 50%, #ffff00 50%); }
+.theme-btn[data-theme="light-clean"] .theme-preview        { background: linear-gradient(135deg, #ffffff 50%, #2563eb 50%); }
+.theme-btn[data-theme="light-warm"] .theme-preview         { background: linear-gradient(135deg, #fefce8 50%, #ca8a04 50%); }
+.theme-btn[data-theme="light-sage"] .theme-preview         { background: linear-gradient(135deg, #f0fdf4 50%, #16a34a 50%); }
+.theme-btn[data-theme="high-contrast-light"] .theme-preview{ background: linear-gradient(135deg, #ffffff 50%, #000000 50%); }
+
 /* ==============================================
    NAVIGATION
    ============================================== */
@@ -386,16 +393,11 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0 2rem;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--text-main);
-    letter-spacing: -0.02em;
+    position: relative;
+    min-height: 40px;
 }
 
 .nav-links {
@@ -403,6 +405,14 @@ nav {
     list-style: none;
     gap: 2rem;
     align-items: center;
+}
+
+/* CV link — anchored to the far right of the navbar */
+.nav-links li:last-child {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .nav-links a {
@@ -649,7 +659,7 @@ nav {
 
 .cta-button.primary {
     background: var(--primary);
-    color: white;
+    color: var(--primary-text);
     border: 1px solid var(--primary);
 }
 
@@ -807,7 +817,7 @@ nav {
 .year-tab.active {
     background: var(--primary);
     border-color: var(--primary);
-    color: white;
+    color: var(--primary-text);
 }
 
 .year-content {
@@ -847,7 +857,7 @@ nav {
     font-size: 0.8rem;
     padding: 0.25rem 0.75rem;
     background: var(--primary);
-    color: white;
+    color: var(--primary-text);
     border-radius: 20px;
     font-weight: 500;
 }
@@ -1017,7 +1027,7 @@ nav {
     top: -10px;
     right: 1rem;
     background: var(--primary);
-    color: white;
+    color: var(--primary-text);
     font-size: 0.7rem;
     font-weight: 700;
     padding: 0.25rem 0.75rem;
@@ -1221,6 +1231,23 @@ nav {
     margin-bottom: 2rem;
 }
 
+.connect-cv-link {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.connect-cv-link a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.connect-cv-link a:hover {
+    color: var(--accent);
+}
+
 .connect-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1369,7 +1396,7 @@ nav {
     width: 100%;
     padding: 0.75rem;
     background: var(--primary);
-    color: white;
+    color: var(--primary-text);
     font-size: 0.95rem;
     font-weight: 600;
     border: none;
