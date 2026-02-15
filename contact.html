@@ -177,6 +177,11 @@
         </section>
     </main>
 
+    <!-- Back to top -->
+    <a href="#navbar" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg class="icon"><use href="./images/icons.svg#icon-arrow-left"/></svg>
+    </a>
+
     <footer class="site-footer">
         <div class="container">
             <p><small>&copy; 2025 Vince Németh. Built with care.</small></p>
@@ -230,6 +235,14 @@
                         navLinks.classList.remove('active');
                         document.body.classList.remove('menu-open');
                     });
+                });
+            }
+
+            // Back to top
+            const backToTop = document.getElementById('backToTop');
+            if (backToTop) {
+                window.addEventListener('scroll', () => {
+                    backToTop.classList.toggle('visible', window.scrollY > 400);
                 });
             }
         });

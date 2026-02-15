@@ -66,6 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             progressBar.style.width = (scrollTop / scrollHeight) * 100 + '%';
         }
+
+        // Back to top button visibility
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            backToTop.classList.toggle('visible', window.scrollY > 400);
+        }
     });
 
     // ==============================================

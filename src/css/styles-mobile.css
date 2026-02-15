@@ -36,12 +36,22 @@
     .nav-links a::after { display: none; }
     .nav-links li:last-child a { border-bottom: none; }
 
-    /* CV link in mobile nav */
+    /* CV link in mobile nav — visually distinct */
     .nav-cv-link {
         justify-content: center;
         border: none; border-radius: 0;
         padding: 1.25rem;
         border-bottom: 1px solid var(--border);
+        background: color-mix(in srgb, var(--primary) 8%, transparent);
+        font-weight: 700;
+        color: var(--primary);
+        gap: 0.5rem;
+    }
+
+    /* Back to top — shift up to avoid theme panel */
+    .back-to-top {
+        bottom: 4.5rem;
+        left: 1rem;
     }
 
     /* Theme panel mobile */
