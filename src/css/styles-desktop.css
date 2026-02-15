@@ -22,8 +22,10 @@
 .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: -4px; left: 0;
-    width: 0; height: 2px;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
     background: var(--primary);
     transition: width 0.2s ease;
 }
@@ -41,27 +43,47 @@
 
 /* Grid adjustments */
 @media (min-width: 1024px) {
-    .skills-grid { grid-template-columns: repeat(2, 1fr); }
-    .about-grid { grid-template-columns: repeat(3, 1fr); }
-    .connect-grid { grid-template-columns: repeat(3, 1fr); }
-    .blocks-grid { grid-template-columns: repeat(2, 1fr); }
-    .personal-projects-grid { grid-template-columns: repeat(4, 1fr); }
-    .featured-projects-grid { grid-template-columns: repeat(2, 1fr); }
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .about-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .connect-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .blocks-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .personal-projects-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .featured-projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (min-width: 1280px) {
-    .container { max-width: 1200px; }
-    .blocks-grid { grid-template-columns: repeat(4, 1fr); }
+    .container {
+        max-width: 1200px;
+    }
+    .blocks-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 /* Theme panel desktop positioning */
 @media (min-width: 1024px) {
     .theme-panel {
-        right: 0; top: 50%; transform: translateY(-50%);
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .theme-options {
-        right: 100%; top: 50%; bottom: auto;
+        right: 100%;
+        top: 50%;
+        bottom: auto;
         transform: translateY(-50%) translateX(20px);
     }
 

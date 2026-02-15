@@ -3,7 +3,7 @@
 // Network-first strategy
 // ==============================================
 
-const CACHE_VERSION = '2.1';
+const CACHE_VERSION = '2.2';
 const CACHE_NAME = `site-v${CACHE_VERSION}`;
 
 const PRECACHE_ASSETS = [
