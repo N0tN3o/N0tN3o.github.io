@@ -1,60 +1,23 @@
-# N0tN3o.github.io
+# vincenemeth.dev
 
-Personal portfolio website for Vince Nemeth -- AI Developer and Data Scientist.
+My personal portfolio website. Built from scratch with no frameworks.
 
-Live at: [https://n0tn3o.github.io](https://n0tn3o.github.io)
+Live at: [vincenemeth.dev](https://vincenemeth.dev)
 
----
+## What it is
 
-## About
+A responsive portfolio site covering my background in AI engineering & data science, academic work, featured projects, and industry experience. It also has a separate contact page.
 
-A responsive, single-page portfolio showcasing my work in deep learning, computer vision, robotics, NLP, and full-stack ML engineering. Built as a static site with no frameworks -- just HTML, CSS, and vanilla JavaScript.
+## Built with
+
+- HTML5, CSS3, vanilla JavaScript
+- Custom properties for theming, CSS Grid and Flexbox for layout
+- Service worker for offline support (network-first caching)
+- SVG sprite sheet for icons
 
 ## Features
 
-- **Responsive layout** -- separate stylesheets for desktop (1024px+) and mobile, no media-query spaghetti
-- **12 colour themes** -- dark, light, high-contrast, and accent variants; saved to localStorage
-- **Service worker** -- network-first caching strategy with offline fallback page
-- **Accessible navigation** -- hamburger menu on mobile, keyboard-navigable, ARIA roles throughout
-- **Academic timeline** -- tabbed year-by-year view of my BSc Applied Data Science & AI curriculum
-- **SVG icon system** -- single sprite sheet, no external icon library dependency
-- **Progressive Web App ready** -- installable with offline support
-
-## Structure
-
-```
-.
-├── index.html                 # Main portfolio page
-├── contact.html               # Contact / inquiry page
-├── offline.html               # Offline fallback (served by service worker)
-├── sw.js                      # Service worker
-├── images/
-│   ├── icons.svg              # SVG icon sprite
-│   ├── webicon.ico            # Favicon (legacy)
-│   └── webicon2.ico           # Favicon (modern)
-└── src/
-    ├── css/
-    │   ├── styles-base.css    # Variables, themes, shared components
-    │   ├── styles-desktop.css # Desktop-specific layout (min-width: 1024px)
-    │   └── styles-mobile.css  # Mobile-specific layout (max-width: 1023px)
-    └── js/
-        └── script.js          # Theme picker, navigation, tabs, scroll effects
-```
-
-## Running Locally
-
-Open `index.html` in a browser. No build step required.
-
-For service worker testing, serve over HTTP:
-
-```bash
-npx serve .
-```
-
-## Tech
-
-HTML5, CSS3 (custom properties, grid, flexbox), vanilla JavaScript, Service Workers.
-
-## License
-
-This is a personal portfolio. Source is public for reference but not licensed for reuse.
+- 12 selectable colour themes (dark, light, high-contrast variants) saved to localStorage
+- Fully responsive with separate desktop and mobile stylesheets
+- Offline fallback page via service worker
+- Accessible navigation with ARIA roles and keyboard support
