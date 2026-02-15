@@ -13,6 +13,8 @@
         top: 100%;
         left: 0;
         width: 100%;
+        max-height: calc(100vh - 100%);
+        overflow-y: auto;
         background-color: var(--bg-card);
         border-bottom: 1px solid var(--border);
         flex-direction: column;
@@ -72,7 +74,7 @@
 
     /* Back to top — shift up to avoid theme panel */
     .back-to-top {
-        bottom: 4.5rem;
+        bottom: 1rem;
         left: 1rem;
     }
 
