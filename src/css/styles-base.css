@@ -1072,7 +1072,7 @@ nav {
     text-transform: uppercase;
 }
 
-.challenge-card h4 {
+.challenge-card h3 {
     font-size: 1.1rem;
     color: var(--text-main);
     margin-bottom: 0.25rem;
@@ -1233,7 +1233,7 @@ nav {
     height: 1.5rem;
 }
 
-.personal-project h4 {
+.personal-project h3 {
     font-size: 0.95rem;
     color: var(--text-main);
     margin-bottom: 0.25rem;
