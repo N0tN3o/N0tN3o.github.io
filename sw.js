@@ -3,7 +3,7 @@
 // Network-first strategy
 // ==============================================
 
-const CACHE_VERSION = '2.3';
+const CACHE_VERSION = '2.4';
 const CACHE_NAME = `site-v${CACHE_VERSION}`;
 
 const PRECACHE_ASSETS = [
@@ -13,6 +13,7 @@ const PRECACHE_ASSETS = [
     './src/css/styles-desktop.css',
     './src/css/styles-mobile.css',
     './src/js/script.js',
+    './src/js/contact.js',
     './src/js/thankyou.js',
     './src/js/theme-picker.js',
     './images/icons.svg',

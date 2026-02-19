@@ -1448,6 +1448,10 @@ nav {
     transform: translateY(-1px);
 }
 
+.h-captcha {
+    margin-bottom: 1rem;
+}
+
 .form-note {
     text-align: center;
     font-size: 0.75rem;
