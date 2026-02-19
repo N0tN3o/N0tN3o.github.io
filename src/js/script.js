@@ -34,10 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // MOBILE NAVIGATION
     // ==============================================
     if (hamburger && navLinks) {
+        const mainContent = document.getElementById('main-content');
+
         hamburger.addEventListener('click', () => {
             const isActive = hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
             document.body.classList.toggle('menu-open', isActive);
+            if (mainContent) mainContent.inert = isActive;
         });
 
         navLinks.querySelectorAll('a').forEach(link => {
@@ -45,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 hamburger.classList.remove('active');
                 navLinks.classList.remove('active');
                 document.body.classList.remove('menu-open');
+                if (mainContent) mainContent.inert = false;
             });
         });
 
@@ -53,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 hamburger.classList.remove('active');
                 navLinks.classList.remove('active');
                 document.body.classList.remove('menu-open');
+                if (mainContent) mainContent.inert = false;
             }
         });
     }

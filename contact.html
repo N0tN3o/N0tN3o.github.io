@@ -22,6 +22,7 @@
     <link rel="shortcut icon" href="./images/webicon.ico" type="image/x-icon">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="bg-animation"></div>
     <aside class="theme-panel" id="themePanel">
         <button class="theme-panel-toggle" id="themePanelToggle" aria-label="Toggle theme picker">
@@ -99,7 +100,7 @@
         </div>
     </nav>
 
-    <main>
+    <main id="main-content">
         <section class="section contact-page-hero visible">
             <div class="container">
                 <div class="contact-hero-header">
@@ -114,10 +115,11 @@
                     </h2>
 
                     <div class="contact-page-form-area">
-                        <form class="inquiry-form" action="https://api.web3forms.com/submit" method="POST">
+                        <form class="inquiry-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="04d6b9c7-bd01-41fc-984b-350123a2b4ce">
-                            <input type="hidden" name="subject" value="New inquiry from portfolio">
-                            <input type="hidden" name="redirect" value="https://vincenemeth.dev/thankyou.html">
+                            <input type="hidden" name="subject" id="formSubject" value="Portfolio Inquiry: General">
+                            <input type="hidden" name="from_name" value="Portfolio Contact Form">
+                            <input type="hidden" name="redirect" value="">
                             <input type="checkbox" name="botcheck" style="display: none;">
 
                             <div class="form-row">
@@ -143,6 +145,7 @@
                                 <label for="page-message">Message</label>
                                 <textarea id="page-message" name="message" required placeholder="Tell me about your project or opportunity..."></textarea>
                             </div>
+                            <div class="h-captcha" data-captcha="true"></div>
                             <button type="submit" class="form-submit">Send Message</button>
                             <p class="form-note">Powered by Web3Forms — no spam, I promise.</p>
                         </form>
@@ -221,10 +224,13 @@
 
             // Mobile nav
             if (hamburger && navLinks) {
+                const mainContent = document.getElementById('main-content');
+
                 hamburger.addEventListener('click', () => {
                     const isActive = hamburger.classList.toggle('active');
                     navLinks.classList.toggle('active');
                     document.body.classList.toggle('menu-open', isActive);
+                    if (mainContent) mainContent.inert = isActive;
                 });
 
                 navLinks.querySelectorAll('a').forEach(link => {
@@ -232,7 +238,23 @@
                         hamburger.classList.remove('active');
                         navLinks.classList.remove('active');
                         document.body.classList.remove('menu-open');
+                        if (mainContent) mainContent.inert = false;
                     });
+                });
+            }
+
+            // Dynamic subject line
+            const subjectSelect = document.getElementById('page-subject');
+            const subjectHidden = document.getElementById('formSubject');
+            if (subjectSelect && subjectHidden) {
+                const labels = {
+                    general: 'General',
+                    internship: 'Internship',
+                    freelance: 'Freelance',
+                    collaboration: 'Collaboration'
+                };
+                subjectSelect.addEventListener('change', () => {
+                    subjectHidden.value = 'Portfolio Inquiry: ' + (labels[subjectSelect.value] || 'General');
                 });
             }
 
@@ -249,5 +271,6 @@
             if (footerYear) footerYear.textContent = new Date().getFullYear();
         });
     </script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>

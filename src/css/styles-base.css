@@ -190,6 +190,20 @@
 }
 
 /* ==============================================
+   ACCESSIBILITY: REDUCED MOTION
+   Disables animations for users who prefer it.
+   ============================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ==============================================
    BASE STYLES
    ============================================== */
 
@@ -235,6 +249,29 @@ strong {
     height: 1em;
     fill: currentColor;
     vertical-align: -0.125em;
+}
+
+/* ==============================================
+   SKIP TO CONTENT (a11y)
+   ============================================== */
+
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 10000;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: var(--primary-text, white);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 0 0 8px 8px;
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 0;
 }
 
 /* ==============================================
