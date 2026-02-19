@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#3b82f6"/>
+      <stop offset="80%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Subtle grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.5" stroke-opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Subtle radial glow behind text -->
+  <circle cx="400" cy="290" r="300" fill="#3b82f6" opacity="0.04"/>
+
+  <!-- Accent line -->
+  <rect x="100" y="350" width="400" height="3" rx="1.5" fill="url(#accentLine)"/>
+
+  <!-- VN monogram badge -->
+  <rect x="100" y="160" width="56" height="56" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="128" y="197" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="26" font-weight="800" fill="#3b82f6" text-anchor="middle" letter-spacing="-1">VN</text>
+
+  <!-- Name -->
+  <text x="100" y="280" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="56" font-weight="800" fill="#f8fafc" letter-spacing="-1">Vince Németh</text>
+
+  <!-- Title -->
+  <text x="100" y="330" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="28" font-weight="600" fill="#3b82f6">AI Engineer &amp; Data Scientist</text>
+
+  <!-- Description -->
+  <text x="100" y="400" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="18" fill="#94a3b8">Deep Learning · Computer Vision · NLP · RAG Systems · Full-Stack ML</text>
+
+  <!-- Domain -->
+  <text x="100" y="510" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="500" fill="#64748b">vincenemeth.dev</text>
+
+  <!-- Decorative dots (right side) -->
+  <g opacity="0.15">
+    <circle cx="900" cy="200" r="80" fill="none" stroke="#3b82f6" stroke-width="1"/>
+    <circle cx="900" cy="200" r="120" fill="none" stroke="#3b82f6" stroke-width="0.5"/>
+    <circle cx="1020" cy="350" r="60" fill="none" stroke="#60a5fa" stroke-width="1"/>
+    <circle cx="1020" cy="350" r="100" fill="none" stroke="#60a5fa" stroke-width="0.5"/>
+    <circle cx="950" cy="480" r="40" fill="none" stroke="#3b82f6" stroke-width="1"/>
+  </g>
+</svg>
