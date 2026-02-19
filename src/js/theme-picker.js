@@ -21,14 +21,12 @@ const THEMES = [
 ];
 
 function initThemePanel() {
-    // Apply saved theme immediately (before DOM builds, to prevent flash)
-    const savedTheme = localStorage.getItem('portfolio-theme') || 'slate-dark';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-
     // Build panel HTML
     const panel = document.createElement('aside');
     panel.className = 'theme-panel';
     panel.id = 'themePanel';
+
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'slate-dark';
 
     const toggle = document.createElement('button');
     toggle.className = 'theme-panel-toggle';
@@ -82,5 +80,11 @@ function initThemePanel() {
     });
 }
 
-// Auto-initialise when script loads
-initThemePanel();
+// Apply saved theme immediately to prevent flash of unstyled content
+(function() {
+    const saved = localStorage.getItem('portfolio-theme') || 'slate-dark';
+    document.documentElement.setAttribute('data-theme', saved);
+})();
+
+// Build panel once DOM is ready
+document.addEventListener('DOMContentLoaded', initThemePanel);

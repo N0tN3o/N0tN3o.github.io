@@ -1,79 +1,74 @@
 // ==============================================
-// Service Worker - Caching & Offline Fallback
-// Network-first strategy
+// SHARED UTILITIES
+// Common functionality used across multiple pages.
+// Load before page-specific scripts.
 // ==============================================
 
-const CACHE_VERSION = '2.4';
-const CACHE_NAME = `site-v${CACHE_VERSION}`;
+/**
+ * Mobile navigation with focus trap and outside-click close.
+ */
+function initMobileNav() {
+    const hamburger = document.getElementById('hamburgerBtn');
+    const navLinks = document.getElementById('navLinks');
+    if (!hamburger || !navLinks) return;
 
-const PRECACHE_ASSETS = [
-    './',
-    './index.html',
-    './src/css/styles-base.css',
-    './src/css/styles-desktop.css',
-    './src/css/styles-mobile.css',
-    './src/js/script.js',
-    './src/js/contact.js',
-    './src/js/thankyou.js',
-    './src/js/theme-picker.js',
-    './images/icons.svg',
-    './offline.html'
-];
+    const mainContent = document.getElementById('main-content');
 
-self.addEventListener('install', (event) => {
-    console.log('[SW] Installing v' + CACHE_VERSION);
-    event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then(cache => {
-                return Promise.allSettled(
-                    PRECACHE_ASSETS.map(asset =>
-                        cache.add(asset).catch(err =>
-                            console.warn(`[SW] Failed to pre-cache: ${asset}`, err)
-                        )
-                    )
-                );
-            })
-            .then(() => self.skipWaiting())
-    );
-});
+    function closeMenu() {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        if (mainContent) mainContent.inert = false;
+    }
 
-self.addEventListener('activate', (event) => {
-    console.log('[SW] Activating v' + CACHE_VERSION);
-    event.waitUntil(
-        caches.keys()
-            .then(keys => Promise.all(
-                keys.filter(key => key !== CACHE_NAME)
-                    .map(key => {
-                        console.log('[SW] Removing old cache:', key);
-                        return caches.delete(key);
-                    })
-            ))
-            .then(() => self.clients.claim())
-    );
-});
+    hamburger.addEventListener('click', () => {
+        const isActive = hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        document.body.classList.toggle('menu-open', isActive);
+        if (mainContent) mainContent.inert = isActive;
+    });
 
-self.addEventListener('fetch', (event) => {
-    const request = event.request;
-    if (request.method !== 'GET') return;
-    if (!request.url.startsWith('http')) return;
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
 
-    event.respondWith(
-        fetch(request)
-            .then(response => {
-                if (response.ok) {
-                    const clone = response.clone();
-                    caches.open(CACHE_NAME).then(cache => cache.put(request, clone));
-                }
-                return response;
-            })
-            .catch(() => {
-                return caches.match(request).then(cached => {
-                    if (cached) return cached;
-                    const accept = request.headers.get('Accept') || '';
-                    if (accept.includes('text/html')) {
-                        return caches.match('./offline.html');
-                    }
-                });
-            })
-    );
-});
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+            closeMenu();
+        }
+    });
+}
+
+/**
+ * Back-to-top button visibility on scroll.
+ */
+function initBackToTop() {
+    const backToTop = document.getElementById('backToTop');
+    if (!backToTop) return;
+
+    window.addEventListener('scroll', () => {
+        backToTop.classList.toggle('visible', window.scrollY > 400);
+    });
+}
+
+/**
+ * Dynamic footer year.
+ */
+function initFooterYear() {
+    const footerYear = document.getElementById('footerYear');
+    if (footerYear) footerYear.textContent = new Date().getFullYear();
+}
+
+/**
+ * Service Worker registration.
+ */
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', async () => {
+        try {
+            const reg = await navigator.serviceWorker.register('./sw.js');
+            console.log('SW registered:', reg.scope);
+        } catch (err) {
+            console.warn('SW registration failed:', err);
+        }
+    });
+}
