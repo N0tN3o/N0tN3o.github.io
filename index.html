@@ -22,6 +22,9 @@
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
 
+    <!-- Theme: apply immediately to prevent FOUC -->
+    <script src="./src/js/theme-picker.js"></script>
+
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -46,7 +49,7 @@
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="bg-animation"></div>
-    <div class="progress-bar" id="progressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="progress-bar" id="progressBar" role="progressbar" aria-label="Page scroll progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 
     <!-- Navigation -->
     <nav id="navbar">
@@ -414,7 +417,7 @@
                 <div class="featured-projects-grid">
                     <article class="challenge-card featured">
                         <span class="challenge-badge">Featured</span>
-                        <h4>Tobroco Engineering Assistant</h4>
+                        <h3>Tobroco Engineering Assistant</h3>
                         <p class="challenge-client">Tobroco-Giant</p>
                         <p class="challenge-description">
                             AI-powered documentation system with semantic search, RAG pipeline, and assisted authoring for engineering manuals.
@@ -429,7 +432,7 @@
                     
                     <article class="challenge-card featured">
                         <span class="challenge-badge">Featured</span>
-                        <h4>NPEC Plant Phenotyping</h4>
+                        <h3>NPEC Plant Phenotyping</h3>
                         <p class="challenge-client">Netherlands Plant Eco-phenotyping Centre</p>
                         <p class="challenge-description">
                             Automated high-throughput phenotyping using Deep ResUNet for Arabidopsis root segmentation in the Hades robotic system.
@@ -443,7 +446,7 @@
                     </article>
                     
                     <article class="challenge-card">
-                        <h4>Latent Space: Through the Eyes of the Algorithm</h4>
+                        <h3>Latent Space: Through the Eyes of the Algorithm</h3>
                         <p class="challenge-client">studio KASBOEK</p>
                         <p class="challenge-description">
                             Interactive art installation that transforms human gaze into AI-interpreted artwork. Eye movements tracked via MediaPipe, rendered as abstract strokes, classified with ResNet50, and interpreted through custom LLM prompts generating psychoanalytical readings, culminating in a thermal print keepsake.
@@ -522,7 +525,7 @@
                         <span class="project-icon">
                             <svg class="icon"><use href="./images/icons.svg#icon-gamepad"/></svg>
                         </span>
-                        <h4>2D Strategy Game</h4>
+                        <h3>2D Strategy Game</h3>
                         <p>Godot Engine (GDScript)</p>
                         <p class="project-detail">Turn-based strategy with procedural map generation and AI opponents.</p>
                     </article>
@@ -530,7 +533,7 @@
                         <span class="project-icon">
                             <svg class="icon"><use href="./images/icons.svg#icon-chart-bar"/></svg>
                         </span>
-                        <h4>Data Science Library</h4>
+                        <h3>Data Science Library</h3>
                         <p>Pandas-clone in pure Python</p>
                         <p class="project-detail">From-scratch DataFrame implementation for understanding internals.</p>
                     </article>
@@ -538,7 +541,7 @@
                         <span class="project-icon">
                             <svg class="icon"><use href="./images/icons.svg#icon-hard-drive"/></svg>
                         </span>
-                        <h4>TrueNAS Server</h4>
+                        <h3>TrueNAS Server</h3>
                         <p>Storage infrastructure</p>
                         <p class="project-detail">ZFS-backed NAS with Docker services and automated backups.</p>
                     </article>
@@ -596,8 +599,7 @@
         </div>
     </footer>
     
-    <script src="./src/js/theme-picker.js"></script>
-    <script src="./src/js/shared.js"></script>
-    <script src="./src/js/script.js"></script>
+    <script src="./src/js/shared.js" defer></script>
+    <script src="./src/js/script.js" defer></script>
 </body>
 </html>

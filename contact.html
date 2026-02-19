@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="./src/css/styles-mobile.css" media="(max-width: 1023px)">
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+
+    <!-- Theme: apply immediately to prevent FOUC -->
+    <script src="./src/js/theme-picker.js"></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
@@ -143,9 +146,8 @@
         </div>
     </footer>
 
-    <script src="./src/js/theme-picker.js"></script>
-    <script src="./src/js/shared.js"></script>
-    <script src="./src/js/contact.js"></script>
+    <script src="./src/js/shared.js" defer></script>
+    <script src="./src/js/contact.js" defer></script>
     <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>
