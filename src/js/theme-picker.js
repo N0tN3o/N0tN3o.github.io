@@ -6,19 +6,31 @@
 // ==============================================
 
 const THEMES = [
-    { id: 'slate-dark',          name: 'Slate Dark' },
-    { id: 'pitch-black',         name: 'Pitch Black' },
-    { id: 'midnight-purple',     name: 'Midnight Purple' },
-    { id: 'ocean-deep',          name: 'Ocean Deep' },
-    { id: 'forest-dark',         name: 'Forest Dark' },
-    { id: 'warm-dark',           name: 'Warm Dark' },
-    { id: 'mono-dark',           name: 'Monochrome Dark' },
-    { id: 'high-contrast-dark',  name: 'High Contrast Dark' },
-    { id: 'light-clean',         name: 'Light Clean' },
-    { id: 'light-warm',          name: 'Light Warm' },
-    { id: 'light-sage',          name: 'Light Sage' },
-    { id: 'high-contrast-light', name: 'High Contrast Light' },
+    { id: 'slate-dark',          name: 'Slate Dark',          color: '#0f172a' },
+    { id: 'pitch-black',         name: 'Pitch Black',         color: '#000000' },
+    { id: 'midnight-purple',     name: 'Midnight Purple',     color: '#1a1625' },
+    { id: 'ocean-deep',          name: 'Ocean Deep',          color: '#0c1929' },
+    { id: 'forest-dark',         name: 'Forest Dark',         color: '#0f1a14' },
+    { id: 'warm-dark',           name: 'Warm Dark',           color: '#1c1512' },
+    { id: 'mono-dark',           name: 'Monochrome Dark',     color: '#0a0a0a' },
+    { id: 'high-contrast-dark',  name: 'High Contrast Dark',  color: '#000000' },
+    { id: 'light-clean',         name: 'Light Clean',         color: '#ffffff' },
+    { id: 'light-warm',          name: 'Light Warm',          color: '#fefce8' },
+    { id: 'light-sage',          name: 'Light Sage',          color: '#f0fdf4' },
+    { id: 'high-contrast-light', name: 'High Contrast Light', color: '#ffffff' },
 ];
+
+/**
+ * Update the browser chrome colour to match the current theme.
+ */
+function updateThemeColor(themeId) {
+    const theme = THEMES.find(t => t.id === themeId);
+    if (!theme) return;
+    let meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) {
+        meta.setAttribute('content', theme.color);
+    }
+}
 
 function initThemePanel() {
     // Build panel HTML
@@ -52,6 +64,7 @@ function initThemePanel() {
         btn.addEventListener('click', () => {
             document.documentElement.setAttribute('data-theme', theme.id);
             localStorage.setItem('portfolio-theme', theme.id);
+            updateThemeColor(theme.id);
             grid.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
         });
@@ -84,6 +97,7 @@ function initThemePanel() {
 (function() {
     const saved = localStorage.getItem('portfolio-theme') || 'slate-dark';
     document.documentElement.setAttribute('data-theme', saved);
+    updateThemeColor(saved);
 })();
 
 // Build panel once DOM is ready
