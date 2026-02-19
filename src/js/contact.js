@@ -1,29 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburgerBtn');
-    const navLinks = document.getElementById('navLinks');
-
     // ==============================================
-    // MOBILE NAVIGATION
+    // SHARED INITIALISERS
     // ==============================================
-    if (hamburger && navLinks) {
-        const mainContent = document.getElementById('main-content');
-
-        hamburger.addEventListener('click', () => {
-            const isActive = hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            document.body.classList.toggle('menu-open', isActive);
-            if (mainContent) mainContent.inert = isActive;
-        });
-
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.classList.remove('menu-open');
-                if (mainContent) mainContent.inert = false;
-            });
-        });
-    }
+    initMobileNav();
+    initBackToTop();
+    initFooterYear();
 
     // ==============================================
     // DYNAMIC EMAIL SUBJECT
@@ -52,20 +33,4 @@ document.addEventListener('DOMContentLoaded', () => {
         const lightThemes = ['light-clean', 'light-warm', 'light-sage', 'high-contrast-light'];
         captchaEl.setAttribute('data-theme', lightThemes.includes(theme) ? 'light' : 'dark');
     }
-
-    // ==============================================
-    // BACK TO TOP
-    // ==============================================
-    const backToTop = document.getElementById('backToTop');
-    if (backToTop) {
-        window.addEventListener('scroll', () => {
-            backToTop.classList.toggle('visible', window.scrollY > 400);
-        });
-    }
-
-    // ==============================================
-    // DYNAMIC FOOTER YEAR
-    // ==============================================
-    const footerYear = document.getElementById('footerYear');
-    if (footerYear) footerYear.textContent = new Date().getFullYear();
 });

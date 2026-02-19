@@ -1,9 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     // ==============================================
+    // SHARED INITIALISERS
+    // ==============================================
+    initMobileNav();
+    initBackToTop();
+    initFooterYear();
+
+    // ==============================================
     // ELEMENT REFERENCES
     // ==============================================
-    const hamburger = document.getElementById('hamburgerBtn');
-    const navLinks = document.getElementById('navLinks');
     const progressBar = document.getElementById('progressBar');
     const yearTabs = document.querySelectorAll('.year-tab');
     const yearContents = document.querySelectorAll('.year-content');
@@ -28,53 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==============================================
-    // MOBILE NAVIGATION
-    // ==============================================
-    if (hamburger && navLinks) {
-        const mainContent = document.getElementById('main-content');
-
-        hamburger.addEventListener('click', () => {
-            const isActive = hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            document.body.classList.toggle('menu-open', isActive);
-            if (mainContent) mainContent.inert = isActive;
-        });
-
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.classList.remove('menu-open');
-                if (mainContent) mainContent.inert = false;
-            });
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.classList.remove('menu-open');
-                if (mainContent) mainContent.inert = false;
-            }
-        });
-    }
-
-    // ==============================================
     // SCROLL PROGRESS BAR
     // ==============================================
-    window.addEventListener('scroll', () => {
-        if (progressBar) {
+    if (progressBar) {
+        window.addEventListener('scroll', () => {
             const scrollTop = document.documentElement.scrollTop;
             const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             progressBar.style.width = (scrollTop / scrollHeight) * 100 + '%';
-        }
-
-        // Back to top button visibility
-        const backToTop = document.getElementById('backToTop');
-        if (backToTop) {
-            backToTop.classList.toggle('visible', window.scrollY > 400);
-        }
-    });
+        });
+    }
 
     // ==============================================
     // ACADEMIC YEAR TABS
@@ -102,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!yearTabsEl) return;
 
         if (window.innerWidth <= 768) {
-            // Dynamically measure nav height
             const nav = document.getElementById('navbar');
             const navHeight = nav ? nav.offsetHeight : 56;
             document.documentElement.style.setProperty('--nav-height', navHeight + 'px');
@@ -154,10 +120,4 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     window.addEventListener('scroll', highlightNavOnScroll);
-
-    // ==============================================
-    // DYNAMIC FOOTER YEAR
-    // ==============================================
-    const footerYear = document.getElementById('footerYear');
-    if (footerYear) footerYear.textContent = new Date().getFullYear();
 });

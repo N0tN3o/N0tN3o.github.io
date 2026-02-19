@@ -1452,6 +1452,10 @@ nav {
     margin-bottom: 1rem;
 }
 
+.honeypot {
+    display: none;
+}
+
 .form-note {
     text-align: center;
     font-size: 0.75rem;

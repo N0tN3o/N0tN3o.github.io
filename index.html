@@ -597,19 +597,7 @@
     </footer>
     
     <script src="./src/js/theme-picker.js"></script>
-    <script>initThemePanel();</script>
+    <script src="./src/js/shared.js"></script>
     <script src="./src/js/script.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', async () => {
-                try {
-                    const reg = await navigator.serviceWorker.register('./sw.js');
-                    console.log('SW registered:', reg.scope);
-                } catch (err) {
-                    console.warn('SW registration failed:', err);
-                }
-            });
-        }
-    </script>
 </body>
 </html>

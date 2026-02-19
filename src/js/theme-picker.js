@@ -81,3 +81,6 @@ function initThemePanel() {
         if (!panel.contains(e.target)) panel.classList.remove('open');
     });
 }
+
+// Auto-initialise when script loads
+initThemePanel();

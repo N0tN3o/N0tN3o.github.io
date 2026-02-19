@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     // ==============================================
-    // DYNAMIC FOOTER YEAR
+    // SHARED INITIALISERS
     // ==============================================
-    const yearEl = document.getElementById('footerYear');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
+    initFooterYear();
 
     // ==============================================
     // COUNTDOWN REDIRECT
