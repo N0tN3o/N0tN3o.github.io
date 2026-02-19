@@ -17,54 +17,6 @@
 <body>
     <div class="bg-animation"></div>
 
-    <!-- Theme Picker Panel -->
-    <aside class="theme-panel" id="themePanel">
-        <button class="theme-panel-toggle" id="themePanelToggle" aria-label="Toggle theme picker">
-            <svg class="icon"><use href="./images/icons.svg#icon-palette"/></svg>
-        </button>
-        <div class="theme-options">
-            <h4>Theme</h4>
-            <div class="theme-grid">
-                <button class="theme-btn" data-theme="slate-dark" title="Slate Dark">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="pitch-black" title="Pitch Black">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="midnight-purple" title="Midnight Purple">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="ocean-deep" title="Ocean Deep">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="forest-dark" title="Forest Dark">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="warm-dark" title="Warm Dark">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="mono-dark" title="Monochrome Dark">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="high-contrast-dark" title="High Contrast Dark">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="light-clean" title="Light Clean">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="light-warm" title="Light Warm">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="light-sage" title="Light Sage">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="high-contrast-light" title="High Contrast Light">
-                    <span class="theme-preview"></span>
-                </button>
-            </div>
-        </div>
-    </aside>
-
     <main class="thankyou-page">
         <div class="thankyou-container">
             <div class="thankyou-icon">
@@ -75,7 +27,7 @@
 
             <h1 class="thankyou-title">Message Sent</h1>
             <p class="thankyou-message">
-                Thanks for reaching out! I'll get back to you as soon as I can. 
+                Thanks for reaching out — I'll get back to you as soon as I can. 
                 In the meantime, feel free to explore more of my work.
             </p>
 
@@ -100,6 +52,8 @@
         </div>
     </main>
 
+    <script src="./src/js/theme-picker.js"></script>
+    <script>initThemePanel();</script>
     <script src="./src/js/thankyou.js"></script>
 </body>
 </html>

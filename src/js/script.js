@@ -5,9 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburgerBtn');
     const navLinks = document.getElementById('navLinks');
     const progressBar = document.getElementById('progressBar');
-    const themePanel = document.getElementById('themePanel');
-    const themePanelToggle = document.getElementById('themePanelToggle');
-    const themeButtons = document.querySelectorAll('.theme-btn');
     const yearTabs = document.querySelectorAll('.year-tab');
     const yearContents = document.querySelectorAll('.year-content');
 
@@ -78,40 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
             backToTop.classList.toggle('visible', window.scrollY > 400);
         }
     });
-
-    // ==============================================
-    // THEME SYSTEM
-    // ==============================================
-    const savedTheme = localStorage.getItem('portfolio-theme') || 'slate-dark';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateActiveThemeButton(savedTheme);
-
-    if (themePanelToggle && themePanel) {
-        themePanelToggle.addEventListener('click', () => {
-            themePanel.classList.toggle('open');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!themePanel.contains(e.target)) {
-                themePanel.classList.remove('open');
-            }
-        });
-    }
-
-    themeButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const theme = btn.getAttribute('data-theme');
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('portfolio-theme', theme);
-            updateActiveThemeButton(theme);
-        });
-    });
-
-    function updateActiveThemeButton(theme) {
-        themeButtons.forEach(btn => {
-            btn.classList.toggle('active', btn.getAttribute('data-theme') === theme);
-        });
-    }
 
     // ==============================================
     // ACADEMIC YEAR TABS

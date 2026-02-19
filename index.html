@@ -48,54 +48,6 @@
     <div class="bg-animation"></div>
     <div class="progress-bar" id="progressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 
-    <!-- Theme Picker Panel -->
-    <aside class="theme-panel" id="themePanel">
-        <button class="theme-panel-toggle" id="themePanelToggle" aria-label="Toggle theme picker">
-            <svg class="icon"><use href="./images/icons.svg#icon-palette"/></svg>
-        </button>
-        <div class="theme-options">
-            <h4>Theme</h4>
-            <div class="theme-grid">
-                <button class="theme-btn" data-theme="slate-dark" title="Slate Dark">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="pitch-black" title="Pitch Black">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="midnight-purple" title="Midnight Purple">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="ocean-deep" title="Ocean Deep">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="forest-dark" title="Forest Dark">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="warm-dark" title="Warm Dark">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="mono-dark" title="Monochrome Dark">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="high-contrast-dark" title="High Contrast Dark">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="light-clean" title="Light Clean">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="light-warm" title="Light Warm">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="light-sage" title="Light Sage">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="high-contrast-light" title="High Contrast Light">
-                    <span class="theme-preview"></span>
-                </button>
-            </div>
-        </div>
-    </aside>
-
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
@@ -644,6 +596,8 @@
         </div>
     </footer>
     
+    <script src="./src/js/theme-picker.js"></script>
+    <script>initThemePanel();</script>
     <script src="./src/js/script.js"></script>
     <script>
         if ('serviceWorker' in navigator) {

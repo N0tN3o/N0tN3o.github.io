@@ -24,52 +24,6 @@
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="bg-animation"></div>
-    <aside class="theme-panel" id="themePanel">
-        <button class="theme-panel-toggle" id="themePanelToggle" aria-label="Toggle theme picker">
-            <svg class="icon"><use href="./images/icons.svg#icon-palette"/></svg>
-        </button>
-        <div class="theme-options">
-            <h4>Theme</h4>
-            <div class="theme-grid">
-                <button class="theme-btn" data-theme="slate-dark" title="Slate Dark">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="pitch-black" title="Pitch Black">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="midnight-purple" title="Midnight Purple">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="ocean-deep" title="Ocean Deep">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="forest-dark" title="Forest Dark">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="warm-dark" title="Warm Dark">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="mono-dark" title="Monochrome Dark">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="high-contrast-dark" title="High Contrast Dark">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="light-clean" title="Light Clean">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="light-warm" title="Light Warm">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="light-sage" title="Light Sage">
-                    <span class="theme-preview"></span>
-                </button>
-                <button class="theme-btn" data-theme="high-contrast-light" title="High Contrast Light">
-                    <span class="theme-preview"></span>
-                </button>
-            </div>
-        </div>
-    </aside>
 
     <!-- Navigation — Contact page variant -->
     <nav id="navbar">
@@ -189,38 +143,12 @@
         </div>
     </footer>
 
+    <script src="./src/js/theme-picker.js"></script>
+    <script>initThemePanel();</script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const hamburger = document.getElementById('hamburgerBtn');
             const navLinks = document.getElementById('navLinks');
-
-            // Theme
-            const savedTheme = localStorage.getItem('portfolio-theme') || 'slate-dark';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-
-            const themePanel = document.getElementById('themePanel');
-            const themePanelToggle = document.getElementById('themePanelToggle');
-            if (themePanel && themePanelToggle) {
-                themePanelToggle.addEventListener('click', () => themePanel.classList.toggle('open'));
-
-                themePanel.querySelectorAll('.theme-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const theme = btn.dataset.theme;
-                        document.documentElement.setAttribute('data-theme', theme);
-                        localStorage.setItem('portfolio-theme', theme);
-                        themePanel.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
-                        btn.classList.add('active');
-                    });
-                });
-
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const activeBtn = themePanel.querySelector(`.theme-btn[data-theme="${currentTheme}"]`);
-                if (activeBtn) activeBtn.classList.add('active');
-
-                document.addEventListener('click', (e) => {
-                    if (!themePanel.contains(e.target)) themePanel.classList.remove('open');
-                });
-            }
 
             // Mobile nav
             if (hamburger && navLinks) {
