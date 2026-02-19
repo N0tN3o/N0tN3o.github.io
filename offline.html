@@ -39,6 +39,8 @@
         <h1>You're Offline</h1>
         <p>It looks like you've lost your internet connection. Please check your connection and try again.</p>
         <button class="retry-btn" onclick="window.location.reload()">Retry</button>
+        <p style="margin-top:2rem;font-size:0.8rem;color:var(--muted)">&copy; <span id="footerYear"></span> Vince Németh</p>
     </main>
+    <script>document.getElementById('footerYear').textContent=new Date().getFullYear();</script>
 </body>
 </html>
