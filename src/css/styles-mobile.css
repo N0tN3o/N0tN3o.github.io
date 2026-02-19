@@ -316,6 +316,15 @@
         margin: 1.5rem 0;
     }
 
+    /* Thank you page */
+    .thankyou-actions {
+        flex-direction: column;
+    }
+    .thankyou-btn {
+        justify-content: center;
+        width: 100%;
+    }
+
     /* Footer */
     .site-footer {
         padding: 1.5rem 0;

@@ -186,4 +186,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     window.addEventListener('scroll', highlightNavOnScroll);
+
+    // ==============================================
+    // DYNAMIC FOOTER YEAR
+    // ==============================================
+    const footerYear = document.getElementById('footerYear');
+    if (footerYear) footerYear.textContent = new Date().getFullYear();
 });

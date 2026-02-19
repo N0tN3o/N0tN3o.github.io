@@ -1494,6 +1494,164 @@ nav {
     font-weight: 500;
 }
 
+/* ==============================================
+   THANK YOU PAGE
+   ============================================== */
+
+.thankyou-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.thankyou-container {
+    text-align: center;
+    max-width: 520px;
+    width: 100%;
+}
+
+.thankyou-icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 1.75rem;
+    background: color-mix(in srgb, var(--primary) 12%, transparent);
+    border: 2px solid color-mix(in srgb, var(--primary) 30%, transparent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.thankyou-checkmark {
+    width: 2rem;
+    height: 2rem;
+    stroke: var(--primary);
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.thankyou-checkmark path {
+    stroke-dasharray: 30;
+    stroke-dashoffset: 30;
+    animation: drawCheck 0.4s 0.4s ease forwards;
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes drawCheck {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.thankyou-title {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+    opacity: 0;
+    animation: fadeUp 0.4s 0.3s ease forwards;
+}
+
+.thankyou-message {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 2.25rem;
+    opacity: 0;
+    animation: fadeUp 0.4s 0.5s ease forwards;
+}
+
+.thankyou-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.4s 0.65s ease forwards;
+}
+
+.thankyou-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.thankyou-btn .icon {
+    width: 0.9em;
+    height: 0.9em;
+}
+
+.thankyou-btn-primary {
+    background: var(--primary);
+    color: var(--primary-text, white);
+    border: 1px solid var(--primary);
+}
+
+.thankyou-btn-primary:hover {
+    background: var(--primary-hover);
+    color: var(--primary-text, white);
+    transform: translateY(-2px);
+}
+
+.thankyou-btn-secondary {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border);
+}
+
+.thankyou-btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.thankyou-redirect-note {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    opacity: 0;
+    animation: fadeUp 0.4s 0.75s ease forwards;
+}
+
+.countdown-num {
+    color: var(--primary);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.thankyou-footer {
+    margin-top: 3rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    opacity: 0;
+    animation: fadeUp 0.4s 0.8s ease forwards;
+}
+
+.thankyou-footer a {
+    color: var(--accent);
+}
+
+.thankyou-footer a:hover {
+    color: var(--primary);
+}
+
 /* Back button */
 .back-button {
     display: inline-flex;

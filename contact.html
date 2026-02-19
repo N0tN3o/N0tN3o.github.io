@@ -116,7 +116,7 @@
                         <form class="inquiry-form" action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="04d6b9c7-bd01-41fc-984b-350123a2b4ce">
                             <input type="hidden" name="subject" value="New inquiry from portfolio">
-                            <input type="hidden" name="redirect" value="">
+                            <input type="hidden" name="redirect" value="https://vincenemeth.dev/thankyou.html">
                             <input type="checkbox" name="botcheck" style="display: none;">
 
                             <div class="form-row">
@@ -181,7 +181,7 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p><small>&copy; 2025 Vince Németh. Built with care.</small></p>
+            <p><small>&copy; <span id="footerYear"></span> Vince Németh. Built with care.</small></p>
         </div>
     </footer>
 
@@ -242,6 +242,10 @@
                     backToTop.classList.toggle('visible', window.scrollY > 400);
                 });
             }
+
+            // Dynamic footer year
+            const footerYear = document.getElementById('footerYear');
+            if (footerYear) footerYear.textContent = new Date().getFullYear();
         });
     </script>
 </body>
