@@ -1,287 +1,605 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="slate-dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vince Nemeth's cv styled portfolio site that shows his experties."/>
-    <meta name="theme-color" content="#232323"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="msapplication-navbutton-color" content="#232323">
-    <link rel="manifest" href="mainfest.webmanifest">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="images/webicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <title>Vince Németh</title>
-</head>
+    <meta name="description" content="Portfolio of Vince Németh — AI Developer & Data Science student at Breda University. Specializing in deep learning, computer vision, robotics, RAG systems, and full-stack AI engineering.">
+    <meta name="theme-color" content="#0f172a">
 
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Vince Németh | AI Developer & Data Scientist">
+    <meta property="og:description" content="AI engineering portfolio — deep learning, computer vision, robotics, RAG pipelines, and production ML systems.">
+    <meta property="og:image" content="https://vincenemeth.dev/images/og-preview.png">
+    <meta property="og:url" content="https://vincenemeth.dev/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>Vince Németh | AI Developer & Data Scientist</title>
+    <link rel="canonical" href="https://vincenemeth.dev/">
+    <link rel="stylesheet" href="./src/css/styles-base.css">
+    <link rel="stylesheet" href="./src/css/styles-desktop.css" media="(min-width: 1024px)">
+    <link rel="stylesheet" href="./src/css/styles-mobile.css" media="(max-width: 1023px)">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+
+    <!-- Theme: apply immediately to prevent FOUC -->
+    <script src="./src/js/theme-picker.js"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Vince Németh",
+        "url": "https://vincenemeth.dev",
+        "jobTitle": "AI Engineer & Data Scientist",
+        "description": "AI engineering portfolio — deep learning, computer vision, robotics, RAG pipelines, and production ML systems.",
+        "knowsAbout": ["Deep Learning", "Computer Vision", "NLP", "RAG Systems", "PyTorch", "Python", "FastAPI", "Robotics"],
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Breda University of Applied Sciences"
+        },
+        "sameAs": [
+            "https://linkedin.com/in/vince-nemeth/",
+            "https://github.com/N0tN3o"
+        ]
+    }
+    </script>
+</head>
 <body>
-    <header>
-        <a href="">
-            <table>
-                <tr>
-                    <td class="name" colspan=3>
-                        <p id="name">Vince Németh</p>
-                    </td>
-                    <td class="image">
-                        <div class="circle">
-                            <img src="images/Clipped_image_20240104_192304.png" alt="picture of me">
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </a>
-    </header>
-    <nav class="nav">
-        <ul class="navbar">
-            <li class="navigation"><a href="#aboutme">About Me</a></li>
-            <li class="navigation"><a href="#education">Education</a></li>
-            <li class="navigation"><a href="#experiences">Experiences</a></li>
-            <li class="navigation"><a href="#keyskills">Key Skills</a></li>
-            <li class="navigation"><a href="#otherinterests">Other Interests</a></li>
-            <li class="navigation"><a href="#references">References</a></li>
-            <span style="font-size: xx-large;"><li class="navigation"><a href="/index2.html">New, In Progress Site</a></li></span>
-        </ul>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <div class="bg-animation"></div>
+    <div class="progress-bar" id="progressBar" role="progressbar" aria-label="Page scroll progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" id="hamburgerBtn" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#academic">Academic</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#industry">Industry</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li>
+                    <a href="docs/VinceNemeth_CV.pdf" class="nav-cv-link" download>
+                        <svg class="icon"><use href="./images/icons.svg#icon-download"/></svg>
+                        CV
+                    </a>
+                </li>
+            </ul>
+        </div>
     </nav>
-    <main>
-        <table class="cvbody">
-            <tr>
-                <td colspan=3 valign=top>
-                    <p id="aboutme"><span>About Me</span></p>
-                </td>
-            </tr>
-            <tr>
-                <td colspan=3 valign=top>
-                    <p class="aboutText">A hardworking, respectful, curious, and ambitious University
-                        student, who speaks 2 languages fluently (English, Hungarian) and one
-                        language at intermediate level (French). <br>I have a deep interest in Computer
-                        Science, which I have studied at a higher level for 2 years as part of a
-                        facultative program in my high school. I have been living in an international
-                        environment for more than a decade, which helped me develop into a good
-                        problem solver, as well as an adaptive, and open-minded person. I have hosted
-                        three exchange students so far, helped managing a summer camp, and taught
-                        informatics for a group for a month. My hobbies are sports, playing video
-                        games, doing little coding, or programming projects to further hone and build
-                        my skillset.</p>
-                        <hr>
-                </td>
+
+    <main id="main-content">
+    <!-- Hero Section -->
+    <section id="home" class="section hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name">Vince Németh</h1>
+                <p class="hero-title">AI Engineer & Data Scientist</p>
+                <p class="hero-description">
+                    I ship AI systems — from research prototype to production. My work spans 
+                    <strong>deep learning</strong>, <strong>computer vision</strong>, <strong>robotics</strong>, 
+                    <strong>NLP</strong>, and <strong>full-stack ML engineering</strong>, 
+                    built for real clients and real constraints.
+                </p>
+                <div class="hero-cta">
+                    <a href="#about" class="cta-button primary">Learn More</a>
+                    <a href="./contact.html" class="cta-button secondary">
+                        <svg class="icon"><use href="./images/icons.svg#icon-paper-plane"/></svg>
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <section class="content-section">
+                <h2 class="section-title">About Me</h2>
+                <p class="about-description">
+                    I am an Applied Data Science & AI student at Breda University of Applied Sciences with a strong footprint in professional software engineering. Beyond coursework, I actively consult for industry clients — building an <strong>AI-assisted documentation system</strong> for Tobroco-Giant and <strong>autonomous phenotyping pipelines</strong> for NPEC.
+                    <br><br>
+                    My expertise lies in full-stack AI development: from training custom <strong>Transformer models</strong> and deploying <strong>computer vision</strong> on edge devices, to orchestrating <strong>self-hosted infrastructure</strong>. I don't just analyse data; I build the pipelines that make it actionable.
+                </p>
                 
-            </tr>
-            
-            <tr>
-                <td colspan=3 valign=top>
-                    <p id="education"><span>Education</span></p>
-                </td>
-            </tr>
-            <tr>
-                <td valign=top>
-                    <p class="summary">2024 - Present</p>
-                </td>
-                <td colspan=2>
-                    <p>Breda University of Applied Sciences: Data Science & Artificial Intelligence</p>
-                </td>
-            </tr>
-            <tr>
-                <td valign=top>
-                    <p class="summary">2019 - 2024<br>
-                        <i>High School</i></p>
-                    </td>
-                    <td colspan=2>
-                    <p>Studied at: Vetési Albert Gimnázium's french bilingual faculty.</p>
-                    <p>Relevant subjects:</p>
-                    <ul>
-                        <li>
-                            <p>maths at an elevated level and number of lessons</p>
-                        </li>
-                        <li>
-                            <p>computer science at an elevated level and number of lessons</p>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td colspan=3 valign=top><hr style="border-style: dashed;">
-                    <p id="education"><span>Courses &amp; Certificates</span></p>
-                </td>
-            </tr>
-            <tr>
+                <div class="about-grid">
+                    <article class="about-item">
+                        <div class="about-icon">
+                            <svg class="icon"><use href="./images/icons.svg#icon-laptop-code"/></svg>
+                        </div>
+                        <h3>Experience</h3>
+                        <p>Freelance Engineer · Junior Dev (Valeo) · SQA Assistant (Valeo)</p>
+                    </article>
+                    <article class="about-item">
+                        <div class="about-icon">
+                            <svg class="icon"><use href="./images/icons.svg#icon-globe"/></svg>
+                        </div>
+                        <h3>Languages</h3>
+                        <p>English (Fluent/C2) · Hungarian (Native) · French (Intermediate)</p>
+                    </article>
+                    <article class="about-item">
+                        <div class="about-icon">
+                            <svg class="icon"><use href="./images/icons.svg#icon-wrench"/></svg>
+                        </div>
+                        <h3>Interests</h3>
+                        <p>Homelabs (TrueNAS/Docker) · Game Dev (Godot) · Open Source Tools</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <section class="content-section">
+                <h2 class="section-title">Technical Stack</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Core &amp; Backend</h3>
+                        <ul class="skill-tags">
+                            <li class="skill-tag">Python</li>
+                            <li class="skill-tag">FastAPI</li>
+                            <li class="skill-tag">PostgreSQL</li>
+                            <li class="skill-tag">SQL</li>
+                            <li class="skill-tag">PySide6 (Qt)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>AI &amp; Deep Learning</h3>
+                        <ul class="skill-tags">
+                            <li class="skill-tag">PyTorch / TensorFlow</li>
+                            <li class="skill-tag">Transformers (RoBERTa)</li>
+                            <li class="skill-tag">Computer Vision (ResUNet)</li>
+                            <li class="skill-tag">RAG / ChromaDB</li>
+                            <li class="skill-tag">MediaPipe</li>
+                            <li class="skill-tag">LSTM / Time Series</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Robotics &amp; Control</h3>
+                        <ul class="skill-tags">
+                            <li class="skill-tag">Opentrons (OT-2)</li>
+                            <li class="skill-tag">PID Control Systems</li>
+                            <li class="skill-tag">Reinforcement Learning</li>
+                            <li class="skill-tag">Hardware Integration</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>DevOps &amp; Infrastructure</h3>
+                        <ul class="skill-tags">
+                            <li class="skill-tag">Docker</li>
+                            <li class="skill-tag">Traefik Reverse Proxy</li>
+                            <li class="skill-tag">Linux / Bash</li>
+                            <li class="skill-tag">Git / CI/CD</li>
+                            <li class="skill-tag">Self-Hosting</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Academic Journey Section -->
+    <section id="academic" class="section">
+        <div class="container">
+            <section class="content-section">
+                <h2 class="section-title">Academic Journey</h2>
+                <p class="section-subtitle">BSc Applied Data Science &amp; AI at Breda University of Applied Sciences</p>
                 
-                <tr>
-                    <td valign=top>
-                        <p class="summary">2024</p>
-                    </td>
-                    <td colspan=2>
-                        <p>Udemy introductory cours on AI developement using python: <a href="https://www.udemy.com/course/python-kozlegenybol-kapitany/" target="_blank" rel="noopener noreferrer">DIGITALPEDRO: Zero To AI hero</a></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td valign=top>
-                        <p class="summary">2023 - 2024</p>
-                    </td>
-                    <td colspan=2>
-                        <p>XAMK Open University, Cambridge Academy of Digital Games and Innovation: Video Games Creation Course</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td valign=top>
-                        <p class="summary">2023</p>
-                    </td>
-                    <td colspan=2>
-                        <p>Cambridge Certificate in Advanced English CAE with overall score of 190</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td valign=top>
-                    <p class="summary">2022</p>
-                </td>
-                <td colspan=2>
-                    <p>Team-lead in an academic competition on environmental sustainability, made it to semi-finals</p>
-                </td>
-            </tr>
-            <tr>
-                <td valign=top>
-                    <p class="summary">2022</p>
-                </td>
-                <td colspan=2>
-                    <p>Zenva Academy Video Game Creation: Godot 3 course</p>
-                </td>
-            </tr>
+                <div class="year-tabs" role="tablist">
+                    <button class="year-tab active" data-year="1" role="tab" aria-selected="true">Year 1</button>
+                    <button class="year-tab" data-year="2" role="tab" aria-selected="false">Year 2</button>
+                    <button class="year-tab" data-year="3" role="tab" aria-selected="false">Year 3</button>
+                </div>
+
+                <!-- Year 1 -->
+                <section class="year-content active" data-year="1" role="tabpanel">
+                    <header class="year-header">
+                        <h3>Foundation Year <span class="year-badge">2024-2025</span></h3>
+                        <p>Building core competencies in data science fundamentals, programming, and machine learning basics.</p>
+                    </header>
+                    <div class="blocks-grid">
+                        <article class="block-card">
+                            <header class="block-header">
+                                <span class="block-label">Block A</span>
+                                <span class="block-credits">15 ECTS</span>
+                            </header>
+                            <h4>Introduction to Data Science</h4>
+                            <ul class="block-topics">
+                                <li>Introduction to AI &amp; Data Science</li>
+                                <li>Data Visualisation with Power BI</li>
+                                <li>Introduction to Programming in Python</li>
+                                <li>Mathematics Foundations</li>
+                            </ul>
+                            <footer class="block-project">
+                                <details class="project-details">
+                                    <summary><span class="project-label">Project:</span> <span class="project-name">SDG Sustainable Mobility Dashboard</span></summary>
+                                    <p class="project-description">Interactive dashboard assessing plug-in hybrids and hybrids as sustainable alternatives to combustion vehicles, focusing on SDGs 11 &amp; 13.</p>
+                                </details>
+                            </footer>
+                        </article>
+                        <article class="block-card">
+                            <header class="block-header">
+                                <span class="block-label">Block B</span>
+                                <span class="block-credits">15 ECTS</span>
+                            </header>
+                            <h4>Machine Learning</h4>
+                            <ul class="block-topics">
+                                <li>Data Analysis with Python</li>
+                                <li>ML Algorithm Fundamentals</li>
+                                <li>Calculus &amp; Linear Algebra</li>
+                                <li>Introduction to SQL</li>
+                            </ul>
+                            <footer class="block-project">
+                                <details class="project-details">
+                                    <summary><span class="project-label">Project:</span> <span class="project-name">Diabetes Patient Outcome Prediction</span></summary>
+                                    <p class="project-description">ML system predicting hospital stay duration and patient readmission risk, combined with clustering analysis to group patients by key clinical features.</p>
+                                </details>
+                            </footer>
+                        </article>
+                        <article class="block-card">
+                            <header class="block-header">
+                                <span class="block-label">Block C</span>
+                                <span class="block-credits">15 ECTS</span>
+                            </header>
+                            <h4>Deep Learning</h4>
+                            <ul class="block-topics">
+                                <li>Introduction to Deep Learning</li>
+                                <li>Responsible &amp; Explainable AI</li>
+                                <li>Human-Centered AI Design</li>
+                                <li>Image Classification</li>
+                            </ul>
+                            <footer class="block-project">
+                                <details class="project-details">
+                                    <summary><span class="project-label">Project:</span> <span class="project-name">Automated Vehicle Damage Classifier</span></summary>
+                                    <p class="project-description">Deep learning image classifier for automated car damage assessment, detecting cracks and dents with potential to expand to scratches, broken glass, flat tyres, and lamp damage.</p>
+                                </details>
+                            </footer>
+                        </article>
+                        <article class="block-card">
+                            <header class="block-header">
+                                <span class="block-label">Block D</span>
+                                <span class="block-credits">15 ECTS</span>
+                            </header>
+                            <h4>Data Science Lifecycle</h4>
+                            <ul class="block-topics">
+                                <li>Agile Project Management</li>
+                                <li>Time Series Analysis</li>
+                                <li>Data Engineering Pipelines</li>
+                                <li>Stakeholder Management</li>
+                            </ul>
+                            <footer class="block-project">
+                                <details class="project-details">
+                                    <summary><span class="project-label">Project:</span> <span class="project-name">Digital Advisor — AI Stock Forecasting</span></summary>
+                                    <p class="project-description">AI-powered predictive system for real-time stock movement forecasts using LSTM models, backed by PostgreSQL and served through a FastAPI dashboard.</p>
+                                </details>
+                            </footer>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Year 2 -->
+                <section class="year-content" data-year="2" role="tabpanel">
+                    <header class="year-header">
+                        <h3>Specialisation Year <span class="year-badge">2025-2026</span></h3>
+                        <p>Advanced techniques in NLP, computer vision, robotics, and research methodology.</p>
+                    </header>
+                    <div class="blocks-grid">
+                        <article class="block-card">
+                            <header class="block-header">
+                                <span class="block-label">Block A</span>
+                                <span class="block-credits">15 ECTS</span>
+                            </header>
+                            <h4>Natural Language Processing</h4>
+                            <ul class="block-topics">
+                                <li>Speech-to-Text Systems</li>
+                                <li>Machine Translation</li>
+                                <li>Text Classification</li>
+                                <li>Transformer Models</li>
+                                <li>Prompt Engineering &amp; Fine-Tuning</li>
+                            </ul>
+                            <footer class="block-project">
+                                <details class="project-details">
+                                    <summary><span class="project-label">Project:</span> <span class="project-name">Hungarian Video Emotion Pipeline</span></summary>
+                                    <p class="project-description">End-to-end NLP pipeline processing Hungarian YouTube videos through audio extraction, speech-to-text (AssemblyAI), translation (Helsinki-NLP OPUS-MT), and 7-class emotion classification using fine-tuned RoBERTa.</p>
+                                </details>
+                            </footer>
+                        </article>
+                        <article class="block-card">
+                            <header class="block-header">
+                                <span class="block-label">Block B</span>
+                                <span class="block-credits">15 ECTS</span>
+                            </header>
+                            <h4>Computer Vision &amp; Robotics</h4>
+                            <ul class="block-topics">
+                                <li>Traditional Computer Vision</li>
+                                <li>Object Detection &amp; Segmentation</li>
+                                <li>PID &amp; RL Control Systems</li>
+                                <li>Opentrons OT-2 Robotics</li>
+                                <li>Reinforcement Learning</li>
+                            </ul>
+                            <footer class="block-project">
+                                <details class="project-details">
+                                    <summary><span class="project-label">Project:</span> <span class="project-name">NPEC Autonomous Plant Phenotyping</span></summary>
+                                    <p class="project-description">Autonomous pipeline for the Hades robotic system; Deep ResUNet root segmentation, PID and RL controllers for the Opentrons OT-2, integrated into a complete system that detects root tips and performs precise inoculation.</p>
+                                </details>
+                            </footer>
+                        </article>
+                        <article class="block-card">
+                            <header class="block-header">
+                                <span class="block-label">Block C</span>
+                                <span class="block-credits">15 ECTS</span>
+                            </header>
+                            <h4>Research Methodology</h4>
+                            <ul class="block-topics">
+                                <li>Analytical &amp; Scientific Thinking</li>
+                                <li>Research Communication</li>
+                                <li>Methodological Rigour</li>
+                                <li>Technical Competence</li>
+                                <li>Collaboration &amp; Research Practice</li>
+                            </ul>
+                            <footer class="block-project">
+                                <details class="project-details">
+                                    <summary><span class="project-label">Project:</span> <span class="project-name">Coming Soon</span></summary>
+                                    <p class="project-description">Quantitative research study building on CV/Robotics or NLP block challenges; designing proposals, testing methods against baselines, and communicating findings scientifically.</p>
+                                </details>
+                            </footer>
+                        </article>
+                        <article class="block-card">
+                            <header class="block-header">
+                                <span class="block-label">Block D</span>
+                                <span class="block-credits">15 ECTS</span>
+                            </header>
+                            <h4>Deploying ML Solutions</h4>
+                            <ul class="block-topics">
+                                <li>Advanced Programming</li>
+                                <li>MLOps Frameworks</li>
+                                <li>MLOps Tools</li>
+                                <li>Cloud Computing</li>
+                            </ul>
+                            <footer class="block-project">
+                                <span class="project-label">Project:</span>
+                                <span class="project-name">Coming Soon</span>
+                            </footer>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Year 3 -->
+                <section class="year-content" data-year="3" role="tabpanel">
+                    <header class="year-header">
+                        <h3>Professional Year <span class="year-badge">2026-2027</span></h3>
+                        <p>Specialisation projects, internship, and preparation for industry or master's programmes.</p>
+                    </header>
+                    <div class="blocks-grid wide">
+                        <article class="block-card semester">
+                            <header class="block-header">
+                                <span class="block-label">Semester 5</span>
+                                <span class="block-credits">30 ECTS</span>
+                            </header>
+                            <h4>Specialisation Project</h4>
+                            <p class="block-description">Role specialisation and consultancy skills development through an extended industry project.</p>
+                        </article>
+                        <article class="block-card semester">
+                            <header class="block-header">
+                                <span class="block-label">Semester 6</span>
+                                <span class="block-credits">30 ECTS</span>
+                            </header>
+                            <h4>Internship / Exchange</h4>
+                            <p class="block-description">Choose from: Specialisation Project 2, Work Placement, or Exchange Abroad.</p>
+                        </article>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section (own top-level section) -->
+    <section id="projects" class="section">
+        <div class="container">
+            <section class="content-section">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Real-world projects completed for industry clients alongside academic work</p>
+                
+                <div class="featured-projects-grid">
+                    <article class="challenge-card featured">
+                        <span class="challenge-badge">Featured</span>
+                        <h3>Tobroco Engineering Assistant</h3>
+                        <p class="challenge-client">Tobroco-Giant</p>
+                        <p class="challenge-description">
+                            AI-powered documentation system with semantic search, RAG pipeline, and assisted authoring for engineering manuals.
+                        </p>
+                        <ul class="challenge-tech">
+                            <li>Python</li>
+                            <li>FastAPI</li>
+                            <li>ChromaDB</li>
+                            <li>RAG</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="challenge-card featured">
+                        <span class="challenge-badge">Featured</span>
+                        <h3>NPEC Plant Phenotyping</h3>
+                        <p class="challenge-client">Netherlands Plant Eco-phenotyping Centre</p>
+                        <p class="challenge-description">
+                            Automated high-throughput phenotyping using Deep ResUNet for Arabidopsis root segmentation in the Hades robotic system.
+                        </p>
+                        <ul class="challenge-tech">
+                            <li>Python</li>
+                            <li>Deep Learning</li>
+                            <li>Computer Vision</li>
+                            <li>Robotics</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="challenge-card">
+                        <h3>Latent Space: Through the Eyes of the Algorithm</h3>
+                        <p class="challenge-client">studio KASBOEK</p>
+                        <p class="challenge-description">
+                            Interactive art installation that transforms human gaze into AI-interpreted artwork. Eye movements tracked via MediaPipe, rendered as abstract strokes, classified with ResNet50, and interpreted through custom LLM prompts generating psychoanalytical readings, culminating in a thermal print keepsake.
+                        </p>
+                        <ul class="challenge-tech">
+                            <li>Python</li>
+                            <li>MediaPipe</li>
+                            <li>ResNet50</li>
+                            <li>LLM</li>
+                            <li>Computer Vision</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Industry & Experience Section -->
+    <section id="industry" class="section">
+        <div class="container">
+            <section class="content-section">
+                <h2 class="section-title">Industry Experience</h2>
+                
+                <div class="experience-timeline">
+                    <article class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <time class="timeline-date" datetime="2023">2023 — Present</time>
+                            <h3 class="timeline-title">Freelance Software Engineer</h3>
+                            <p class="timeline-org">Independent</p>
+                            <p class="timeline-description">
+                                Development of professional-grade tools and open-source software.
+                            </p>
+                            <ul class="timeline-projects">
+                                <li class="mini-project">
+                                    <strong>CineSlice</strong> — Desktop video frame extractor with multi-threaded FFmpeg pipeline (Python, PySide6)
+                                </li>
+                                <li class="mini-project">
+                                    <strong>Infrastructure Monitor</strong> — Self-hosted alerting system with Docker, Traefik, and SEO validation
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <time class="timeline-date" datetime="2025-07">Jul 2025 — Aug 2025</time>
+                            <h3 class="timeline-title">Junior Software Developer</h3>
+                            <p class="timeline-org">Valeo</p>
+                            <p class="timeline-description">
+                                Developed custom applications for engineering teams to improve testing and data analysis. Built tools to analyse large volumes of test data (1M+ records across 100+ product SKUs) with automated anomaly detection, trend analysis, visualisation, reporting, and documentation. Created a Cpk analysis app, used by 2 engineering teams, for process capability evaluation, replacing manual spreadsheet workflows for production-line evaluation. And contributed to project feasibility and digitisation strategy.
+                            </p>
+                        </div>
+                    </article>
+                    
+                    <article class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <time class="timeline-date" datetime="2024-07">Jul 2024 — Aug 2024</time>
+                            <h3 class="timeline-title">Supplier Quality Assurance Assistant</h3>
+                            <p class="timeline-org">Valeo</p>
+                            <p class="timeline-description">
+                                Supported 3 supplier audits and process data analysis. Gained insight into quality control logic used in industrial automation.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </section>
             
-            <tr><td colspan="3"><hr></td></tr>
-            <tr>
-                <td colspan=3 valign=top>
-                    <p id="experiences"><span>Experiences</span></p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p class="summary">2024</p>
-                </td>
-                <td colspan=2 valign=top>
-                    <p>Successfuly migrated an OS from an older hardware to a new one</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p class="summary">2022</p>
-                </td>
-                <td colspan=2 valign=top>
-                    <p>Built and deployed a TrueNAS (FreeBSD) based media server</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p class="summary">2022</p>
-                </td>
-                <td colspan=2 valign=top>
-                    <p>Made a video game</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p class="summary">2019</p>
-                </td>
-                <td colspan=2 valign=top>
-                    <p>Taught informatics for a group for a month</p>
-                </td>
-            </tr>
-            <tr><td colspan="3"><hr></td></tr>
-            <tr>
-                <td colspan=3 valign=top>
-                    <p id="keyskills"><span>Key Skills</span></p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p class="summary">General 'know-how' & Practical approach</p>
-                </td>
-                <td colspan=2 valign=top>
-                    <p>I quickly get the basic workings of a device. I approach new things without much of a fear and I dont mind getting my hands "dirty"</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p class="summary">Vast knowledge in CS</p>
-                </td>
-                <td colspan=2 valign=top>
-                    <p>I tried myself out in many programming languages including Python, Java, JavaScript, CSS and HTML</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p class="summary">People management</p>
-                </td>
-                <td colspan=2 valign=top>
-                    <p>Helped managing a summer camp</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p class="summary">Quick learner</p>
-                </td>
-                <td colspan=2 valign=top>
-                    <p>
-                        &nbsp;
-                    </p>
-                </td>
-            </tr>
-            <tr><td colspan="3"><hr></td></tr>
-            <tr>
-                <td colspan=3 valign=top>
-                    <p id="otherinterests"><span>Other Interests</span></p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p class="summary">Traveling and <br> exploring new cultures</p>
-                </td>
-                <td colspan=2 valign=top>
-                    <p>Been to 16 countries all around Europe so far</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p class="summary">Sports</p>
-                </td>
-                <td  colspan=2 valign=top>
-                    <p>Did Judo, Swimming, Tennis, Horse-riding, Basketball, and Wall climbing</p>
-                </td>
-            </tr>
-            <tr><td colspan="3"><hr></td></tr>
-            <tr>
-                <td colspan=3 valign=top>
-                    <p id="references"><span>References</span></p>
-                </td>
-            </tr>
-            <tr>
-                <td valign=top>
-                    <p class="summary">LinkedIn</p>
-                </td>
-                <td colspan=2 valign=top>
-                    <p><a target="_blank" rel="noopener" href="https://www.linkedin.com/in/vince-nemeth">Vince Németh</a></p>
-                </td>
-            </tr>
-            <tr>
-                <td valign=top>
-                    <p class="summary">The game I made</p>
-                </td>
-                <td colspan=2 valign=top>
-                    <p><a target="_blank" rel="noopener" href="https://veriorm-studio.itch.io/">Colonisation of Mars</a></p>
-                </td>
-            </tr>
-            <tr>
-                <td valign=top>
-                    <p class="summary">Udemy Certificate</p>
-                </td>
-                <td colspan=2 valign=top>
-                    <p><a target="_blank" rel="noopener" href="https://www.udemy.com/certificate/UC-1cf9a2de-5d17-4161-9538-c12fb44a7c9d/">Certificate</a></p>
-                </td>
-            </tr>
-        </table>
+            <!-- Personal Projects -->
+            <section class="content-section">
+                <h2 class="section-title">Personal Projects</h2>
+                <div class="personal-projects-grid">
+                    <article class="personal-project">
+                        <span class="project-icon">
+                            <svg class="icon"><use href="./images/icons.svg#icon-gamepad"/></svg>
+                        </span>
+                        <h3>2D Strategy Game</h3>
+                        <p>Godot Engine (GDScript)</p>
+                        <p class="project-detail">Turn-based strategy with procedural map generation and AI opponents.</p>
+                    </article>
+                    <article class="personal-project">
+                        <span class="project-icon">
+                            <svg class="icon"><use href="./images/icons.svg#icon-chart-bar"/></svg>
+                        </span>
+                        <h3>Data Science Library</h3>
+                        <p>Pandas-clone in pure Python</p>
+                        <p class="project-detail">From-scratch DataFrame implementation for understanding internals.</p>
+                    </article>
+                    <article class="personal-project">
+                        <span class="project-icon">
+                            <svg class="icon"><use href="./images/icons.svg#icon-hard-drive"/></svg>
+                        </span>
+                        <h3>TrueNAS Server</h3>
+                        <p>Storage infrastructure</p>
+                        <p class="project-detail">ZFS-backed NAS with Docker services and automated backups.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Connect Section — brief CTA to contact page -->
+    <section id="connect" class="section">
+        <div class="container">
+            <section class="content-section connect-section">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="connect-intro">Ready to build the next generation of intelligent software.</p>
+                
+                <div class="connect-grid">
+                    <a href="https://linkedin.com/in/vince-nemeth/" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <span class="contact-icon">
+                            <svg class="icon"><use href="./images/icons.svg#icon-linkedin"/></svg>
+                        </span>
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">Connect with me</span>
+                    </a>
+                    <a href="https://github.com/N0tN3o" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <span class="contact-icon">
+                            <svg class="icon"><use href="./images/icons.svg#icon-github"/></svg>
+                        </span>
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value">View my code</span>
+                    </a>
+                    <a href="./contact.html" class="contact-card contact-card-cta">
+                        <span class="contact-icon">
+                            <svg class="icon"><use href="./images/icons.svg#icon-paper-plane"/></svg>
+                        </span>
+                        <span class="contact-label">Inquiry</span>
+                        <span class="contact-value">Send me a message</span>
+                    </a>
+                </div>
+                <p class="connect-cv-link">
+                    You can also <a href="docs/VinceNemeth_CV.pdf" download>download my CV</a>.
+                </p>
+            </section>
+        </div>
+    </section>
     </main>
-    <footer>
-        <div class="contact"><p>Site last updated: 2024-01-04</p></div>
-        <div class="contact"><p>Copyright © 2023 Vince Németh</p></div>
+
+    <!-- Back to top -->
+    <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg class="icon"><use href="./images/icons.svg#icon-arrow-left"/></svg>
+    </a>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p><small>&copy; <span id="footerYear"></span> Vince Németh. Built with care.</small></p>
+        </div>
     </footer>
+    
+    <script src="./src/js/shared.js" defer></script>
+    <script src="./src/js/script.js" defer></script>
 </body>
 </html>

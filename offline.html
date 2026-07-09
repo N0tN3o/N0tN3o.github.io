@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline | Vince Németh</title>
+    <style>
+        :root {
+            --bg: #0f172a; --card: #1e293b; --text: #f8fafc;
+            --muted: #94a3b8; --primary: #3b82f6;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg); color: var(--text);
+            min-height: 100vh; display: flex;
+            align-items: center; justify-content: center; padding: 2rem;
+        }
+        .offline-container { text-align: center; max-width: 400px; }
+        .offline-icon { margin-bottom: 1.5rem; }
+        .offline-icon svg { width: 4rem; height: 4rem; fill: var(--muted); }
+        h1 { font-size: 1.75rem; margin-bottom: 0.75rem; font-weight: 700; }
+        p { color: var(--muted); line-height: 1.6; margin-bottom: 1.5rem; }
+        .retry-btn {
+            display: inline-block; padding: 0.75rem 2rem;
+            background: var(--primary); color: var(--text);
+            border: none; border-radius: 0.5rem;
+            font-size: 1rem; cursor: pointer;
+            text-decoration: none; transition: opacity 0.2s;
+        }
+        .retry-btn:hover { opacity: 0.85; }
+    </style>
+</head>
+<body>
+    <main class="offline-container">
+        <div class="offline-icon">
+            <svg viewBox="0 0 576 512"><use href="./images/icons.svg#icon-tower-broadcast"/></svg>
+        </div>
+        <h1>You're Offline</h1>
+        <p>It looks like you've lost your internet connection. Please check your connection and try again.</p>
+        <button class="retry-btn" onclick="window.location.reload()">Retry</button>
+        <p style="margin-top:2rem;font-size:0.8rem;color:var(--muted)">&copy; <span id="footerYear"></span> Vince Németh</p>
+    </main>
+    <script>document.getElementById('footerYear').textContent=new Date().getFullYear();</script>
+</body>
+</html>

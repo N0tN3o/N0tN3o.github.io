@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="slate-dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Vince Németh — AI Developer & Data Science student. Send an inquiry or connect via LinkedIn and GitHub.">
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact | Vince Németh">
+    <meta property="og:description" content="Get in touch — AI consulting, freelance projects, internships, or collaboration.">
+    <meta property="og:image" content="https://vincenemeth.dev/images/og-preview.png">
+    <meta property="og:url" content="https://vincenemeth.dev/contact.html">
+
+    <title>Contact | Vince Németh</title>
+    <link rel="canonical" href="https://vincenemeth.dev/contact.html">
+    <link rel="stylesheet" href="./src/css/styles-base.css">
+    <link rel="stylesheet" href="./src/css/styles-desktop.css" media="(min-width: 1024px)">
+    <link rel="stylesheet" href="./src/css/styles-mobile.css" media="(max-width: 1023px)">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+
+    <!-- Theme: apply immediately to prevent FOUC -->
+    <script src="./src/js/theme-picker.js"></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <div class="bg-animation"></div>
+
+    <!-- Navigation — Contact page variant -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" id="hamburgerBtn" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li>
+                    <a href="./index.html" class="nav-back-link">
+                        <svg class="icon"><use href="./images/icons.svg#icon-arrow-left"/></svg>
+                        Portfolio
+                    </a>
+                </li>
+                <li><a href="./index.html#about">About</a></li>
+                <li><a href="./index.html#projects">Projects</a></li>
+                <li><a href="./index.html#industry">Industry</a></li>
+                <li>
+                    <a href="docs/VinceNemeth_CV.pdf" class="nav-cv-link" download>
+                        <svg class="icon"><use href="./images/icons.svg#icon-download"/></svg>
+                        CV
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="section contact-page-hero visible">
+            <div class="container">
+                <div class="contact-hero-header">
+                    <h1 class="contact-hero-name">Let's Build Something Together</h1>
+                    <p class="contact-hero-tagline">Whether it's an AI project, a freelance opportunity, or just a conversation about tech — I'd love to hear from you.</p>
+                </div>
+
+                <section class="content-section">
+                    <h2 class="section-title">
+                        <svg class="icon"><use href="./images/icons.svg#icon-envelope"/></svg>
+                        Send a Message
+                    </h2>
+
+                    <div class="contact-page-form-area">
+                        <form class="inquiry-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="04d6b9c7-bd01-41fc-984b-350123a2b4ce">
+                            <input type="hidden" name="subject" id="formSubject" value="Portfolio Inquiry: General">
+                            <input type="hidden" name="from_name" value="Portfolio Contact Form">
+                            <input type="hidden" name="redirect" value="">
+                            <input type="checkbox" name="botcheck" class="honeypot">
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="page-name">Name</label>
+                                    <input type="text" id="page-name" name="name" required placeholder="Your name" autocomplete="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="page-email">Email</label>
+                                    <input type="email" id="page-email" name="email" required placeholder="you@example.com" autocomplete="email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="page-subject">Subject</label>
+                                <select id="page-subject" name="inquiry_type">
+                                    <option value="general">General Inquiry</option>
+                                    <option value="internship">Internship Opportunity</option>
+                                    <option value="freelance">Freelance Project</option>
+                                    <option value="collaboration">Collaboration</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="page-message">Message</label>
+                                <textarea id="page-message" name="message" required placeholder="Tell me about your project or opportunity..."></textarea>
+                            </div>
+                            <div class="h-captcha" data-captcha="true"></div>
+                            <button type="submit" class="form-submit">Send Message</button>
+                            <p class="form-note">Powered by Web3Forms — no spam, I promise.</p>
+                        </form>
+                    </div>
+                </section>
+
+                <div class="contact-page-divider">
+                    <p class="contact-page-divider-text">You can also find me on these platforms</p>
+                </div>
+
+                <section class="content-section contact-page-socials-section">
+                    <div class="contact-page-socials">
+                        <a href="https://linkedin.com/in/vince-nemeth/" target="_blank" rel="noopener noreferrer" class="contact-side-card">
+                            <span class="contact-icon">
+                                <svg class="icon"><use href="./images/icons.svg#icon-linkedin"/></svg>
+                            </span>
+                            <span class="contact-side-label">LinkedIn</span>
+                            <span class="contact-side-value">Connect with me</span>
+                        </a>
+                        <a href="https://github.com/N0tN3o" target="_blank" rel="noopener noreferrer" class="contact-side-card">
+                            <span class="contact-icon">
+                                <svg class="icon"><use href="./images/icons.svg#icon-github"/></svg>
+                            </span>
+                            <span class="contact-side-label">GitHub</span>
+                            <span class="contact-side-value">View my code</span>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- Back to top -->
+    <a href="#navbar" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg class="icon"><use href="./images/icons.svg#icon-arrow-left"/></svg>
+    </a>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p><small>&copy; <span id="footerYear"></span> Vince Németh. Built with care.</small></p>
+        </div>
+    </footer>
+
+    <script src="./src/js/shared.js" defer></script>
+    <script src="./src/js/contact.js" defer></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+</body>
+</html>

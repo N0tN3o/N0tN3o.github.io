@@ -1,117 +1,123 @@
-// Create floating particles
-function createParticles() {
-    const particlesContainer = document.getElementById('particles');
-    const particleCount = 50;
-
-    for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        
-        const size = Math.random() * 4 + 2;
-        const posX = Math.random() * 100;
-        const posY = Math.random() * 100;
-        const delay = Math.random() * 6;
-        
-        particle.style.width = size + 'px';
-        particle.style.height = size + 'px';
-        particle.style.left = posX + '%';
-        particle.style.top = posY + '%';
-        particle.style.animationDelay = delay + 's';
-        
-        particlesContainer.appendChild(particle);
-    }
-}
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// Scroll animations
-function animateOnScroll() {
-    const sections = document.querySelectorAll('.section');
-    const navbar = document.getElementById('navbar');
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        const scrollPos = window.pageYOffset + window.innerHeight;
-        
-        if (scrollPos > sectionTop + sectionHeight / 3) {
-            section.classList.add('visible');
-        }
-    });
-
-    // Navbar scroll effect
-    if (window.pageYOffset > 100) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-
-    // Progress bar
-    const scrollPercent = (window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) * 100;
-    document.getElementById('progressBar').style.width = scrollPercent + '%';
-}
-
-// Mobile menu toggle
-const mobileToggle = document.getElementById('mobileToggle');
-const navLinks = document.getElementById('navLinks');
-
-mobileToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-
-// Close mobile menu when clicking on a link
-navLinks.addEventListener('click', (e) => {
-    if (e.target.tagName === 'A') {
-        navLinks.classList.remove('active');
-    }
-});
-
-// Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    createParticles();
-    animateOnScroll();
-});
+    // ==============================================
+    // SHARED INITIALISERS
+    // ==============================================
+    initMobileNav();
+    initBackToTop();
+    initFooterYear();
 
-// Event listeners
-window.addEventListener('scroll', animateOnScroll);
+    // ==============================================
+    // ELEMENT REFERENCES
+    // ==============================================
+    const progressBar = document.getElementById('progressBar');
+    const yearTabs = document.querySelectorAll('.year-tab');
+    const yearContents = document.querySelectorAll('.year-content');
 
-// Smooth reveal animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+    // ==============================================
+    // SMOOTH SCROLLING
+    // ==============================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+            const href = anchor.getAttribute('href');
+            if (!href || href === '#') { e.preventDefault(); return; }
+            try {
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            } catch (error) {
+                console.warn('Invalid anchor href:', href);
+            }
+        });
+    });
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+    // ==============================================
+    // SCROLL PROGRESS BAR
+    // ==============================================
+    if (progressBar) {
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            progressBar.style.width = (scrollTop / scrollHeight) * 100 + '%';
+        });
+    }
+
+    // ==============================================
+    // ACADEMIC YEAR TABS
+    // ==============================================
+    yearTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const year = tab.getAttribute('data-year');
+            yearTabs.forEach(t => {
+                t.classList.toggle('active', t === tab);
+                t.setAttribute('aria-selected', t === tab);
+            });
+            yearContents.forEach(content => {
+                content.classList.toggle('active', content.getAttribute('data-year') === year);
+            });
+        });
+    });
+
+    // ==============================================
+    // STICKY YEAR TABS (dynamic top offset)
+    // Activates on screens <= 768px only
+    // ==============================================
+    const yearTabsEl = document.querySelector('.year-tabs');
+
+    function updateStickyTabs() {
+        if (!yearTabsEl) return;
+
+        if (window.innerWidth <= 768) {
+            const nav = document.getElementById('navbar');
+            const navHeight = nav ? nav.offsetHeight : 56;
+            document.documentElement.style.setProperty('--nav-height', navHeight + 'px');
+            yearTabsEl.classList.add('sticky');
+        } else {
+            yearTabsEl.classList.remove('sticky');
         }
-    });
-}, observerOptions);
+    }
 
-document.querySelectorAll('.section').forEach(section => {
-    observer.observe(section);
-});
+    updateStickyTabs();
+    window.addEventListener('resize', updateStickyTabs);
 
-// Add hover effects to skill tags
-document.querySelectorAll('.skill-tag').forEach(tag => {
-    tag.addEventListener('mouseenter', () => {
-        tag.style.transform = 'scale(1.05) rotate(2deg)';
+    // ==============================================
+    // SECTION FADE-IN ON SCROLL
+    // ==============================================
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section').forEach(section => {
+        fadeObserver.observe(section);
     });
-    
-    tag.addEventListener('mouseleave', () => {
-        tag.style.transform = 'scale(1) rotate(0deg)';
-    });
+
+    // ==============================================
+    // ACTIVE NAV LINK HIGHLIGHTING
+    // ==============================================
+    const sections = document.querySelectorAll('.section');
+    const navLinkItems = document.querySelectorAll('.nav-links a[href^="#"]');
+
+    const highlightNavOnScroll = () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (window.scrollY >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinkItems.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', highlightNavOnScroll);
 });
