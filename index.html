@@ -34,7 +34,7 @@
         "url": "https://vincenemeth.dev",
         "jobTitle": "AI Engineer & Data Scientist",
         "description": "AI engineering portfolio — deep learning, computer vision, robotics, RAG pipelines, and production ML systems.",
-        "knowsAbout": ["Deep Learning", "Computer Vision", "NLP", "RAG Systems", "PyTorch", "Python", "FastAPI", "Robotics"],
+        "knowsAbout": ["Deep Learning", "Computer Vision", "NLP", "RAG Systems", "MLOps", "PyTorch", "Python", "FastAPI", "Robotics"],
         "alumniOf": {
             "@type": "CollegeOrUniversity",
             "name": "Breda University of Applied Sciences"
@@ -153,6 +153,7 @@
                             <li class="skill-tag">Python</li>
                             <li class="skill-tag">FastAPI</li>
                             <li class="skill-tag">PostgreSQL</li>
+                            <li class="skill-tag">SQLAlchemy / Alembic</li>
                             <li class="skill-tag">SQL</li>
                             <li class="skill-tag">PySide6 (Qt)</li>
                         </ul>
@@ -178,9 +179,11 @@
                         </ul>
                     </div>
                     <div class="skill-category">
-                        <h3>DevOps &amp; Infrastructure</h3>
+                        <h3>MLOps &amp; Infrastructure</h3>
                         <ul class="skill-tags">
                             <li class="skill-tag">Docker</li>
+                            <li class="skill-tag">Azure ML</li>
+                            <li class="skill-tag">MLflow</li>
                             <li class="skill-tag">Traefik Reverse Proxy</li>
                             <li class="skill-tag">Linux / Bash</li>
                             <li class="skill-tag">Git / CI/CD</li>
@@ -295,7 +298,7 @@
                 <section class="year-content" data-year="2" role="tabpanel">
                     <header class="year-header">
                         <h3>Specialisation Year <span class="year-badge">2025-2026</span></h3>
-                        <p>Advanced techniques in NLP, computer vision, robotics, and research methodology.</p>
+                        <p>Advanced techniques in NLP, computer vision, robotics, research methodology, and ML deployment.</p>
                     </header>
                     <div class="blocks-grid">
                         <article class="block-card">
@@ -353,8 +356,8 @@
                             </ul>
                             <footer class="block-project">
                                 <details class="project-details">
-                                    <summary><span class="project-label">Project:</span> <span class="project-name">Coming Soon</span></summary>
-                                    <p class="project-description">Quantitative research study building on CV/Robotics or NLP block challenges; designing proposals, testing methods against baselines, and communicating findings scientifically.</p>
+                                    <summary><span class="project-label">Project:</span> <span class="project-name">Context-Aware Translation for Emotion Classification</span></summary>
+                                    <p class="project-description">Quantitative study on whether document-level context improves emotional nuance in machine translation. Benchmarked 3 MT engines (Opus-MT, NLLB-200, Llama 3.1 70B) across 4 context windows on 1,045 Spanish dialogue utterances, evaluated with McNemar, Cochran's Q, Friedman, and bootstrap confidence intervals. Key finding: the benefit of context is architecture-dependent — sentence-pair models collapse (–54% F1) while only the instruction-tuned LLM stays stable and slightly improves.</p>
                                 </details>
                             </footer>
                         </article>
@@ -371,8 +374,10 @@
                                 <li>Cloud Computing</li>
                             </ul>
                             <footer class="block-project">
-                                <span class="project-label">Project:</span>
-                                <span class="project-name">Coming Soon</span>
+                                <details class="project-details">
+                                    <summary><span class="project-label">Project:</span> <span class="project-name">Root Phenotyping ML Platform</span></summary>
+                                    <p class="project-description">A full-stack MLOps platform, built as a team, that takes the NPEC root-detection model from research notebook to live service. Users interact through an authenticated web frontend that submits plant images, returns root-detection predictions, and captures feedback; a FastAPI backend runs the segmentation pipeline and persists every result. The same codebase deploys three ways — local Docker Compose, on-premise Portainer, and Azure ML in the cloud — with deployment identity switched by a single environment variable. My contribution was the two foundational layers underneath: the entire PostgreSQL data layer (a nine-table SQLAlchemy schema, Alembic migrations, and a Dockerised migration runner kept consistent across all environments) and a model-lineage system that registers every model against its git commit, logs each prediction to an append-only audit trail, and can trace any prediction back to the exact model, dataset, and commit that produced it.</p>
+                                </details>
                             </footer>
                         </article>
                     </div>
@@ -442,6 +447,24 @@
                             <li>Deep Learning</li>
                             <li>Computer Vision</li>
                             <li>Robotics</li>
+                        </ul>
+                    </article>
+
+                    <article class="challenge-card featured">
+                        <span class="challenge-badge">Featured</span>
+                        <h3>Root Phenotyping ML Platform</h3>
+                        <p class="challenge-client">Netherlands Plant Eco-phenotyping Centre</p>
+                        <p class="challenge-description">
+                            A full-stack, team-built MLOps platform that serves the NPEC root-detection model in production — an authenticated web app and FastAPI backend running the segmentation pipeline, deployable unchanged across local, on-premise (Portainer), and Azure ML environments. I built its foundations: the complete PostgreSQL data layer (SQLAlchemy + Alembic) and a model-lineage system with append-only inference auditing and full prediction-to-commit traceability.
+                        </p>
+                        <ul class="challenge-tech">
+                            <li>PostgreSQL</li>
+                            <li>SQLAlchemy</li>
+                            <li>Alembic</li>
+                            <li>FastAPI</li>
+                            <li>Azure ML</li>
+                            <li>MLflow</li>
+                            <li>Docker</li>
                         </ul>
                     </article>
                     
